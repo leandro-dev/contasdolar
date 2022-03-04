@@ -11,6 +11,7 @@ val sqlDelightVersion: String by project
 val androidXTestExtKotlinRunnerVersion = "1.1.3"
 val androidXTestCoreVersion = "1.4.0"
 val robolectricVersion = "4.7.3"
+val firebaseKotlinSdkVersion = "1.4.3"
 
 kotlin {
     android()
@@ -33,6 +34,8 @@ kotlin {
             dependencies {
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
                 implementation("com.squareup.sqldelight:runtime:$sqlDelightVersion")
+                implementation("dev.gitlive:firebase-firestore:$firebaseKotlinSdkVersion")
+                implementation("dev.gitlive:firebase-firestore:1.4.3")
             }
         }
         val commonTest by getting {

@@ -1,20 +1,21 @@
 package com.leandrodev.contasdolar.android
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.leandrodev.contasdolar.Greeting
-import android.widget.TextView
-
-fun greet(): String {
-    return Greeting().greeting()
-}
+import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.ui.platform.ComposeView
+import com.google.accompanist.appcompattheme.AppCompatTheme
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val tv: TextView = findViewById(R.id.text_view)
-        tv.text = greet()
+        val auth = findViewById<ComposeView>(R.id.auth)
+
+        auth.setContent {
+            AppCompatTheme {
+                AuthScreen()
+            }
+        }
     }
 }

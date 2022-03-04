@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "767994822964",
+    "project_id": "leandrodev-home",
+    "storage_bucket": "leandrodev-home.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:767994822964:android:cb0019b08be07affb16561",
+        "android_client_info": {
+          "package_name": "com.leandrodev.contasdolar.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "767994822964-eh1veo8i0b46t82klqikhto51k3pv830.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.leandrodev.contasdolar.android",
+            "certificate_hash": "8714e577f1fcb82ff93c836f6ba778632d4ee448"
+          }
+        },
+        {
+          "client_id": "767994822964-7gfi9p79qro7g6qlgha1j21gcrd4olu2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDL5DBxsZ-4l5G9FfrCR-g89enaNFUQ_vU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "767994822964-7gfi9p79qro7g6qlgha1j21gcrd4olu2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

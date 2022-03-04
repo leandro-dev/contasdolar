@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Home</string>
+    <string name="ic_launcher_description">Application logo</string>
+    <string name="auth_screen_title">Hello</string>
+</resources>
