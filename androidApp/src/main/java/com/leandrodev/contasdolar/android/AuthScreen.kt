@@ -11,27 +11,36 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.viewinterop.AndroidView
+import com.google.android.gms.common.SignInButton
 
-@Preview
 @Composable
-internal fun AuthScreen() {
+internal fun AuthScreen(
+    onGoogleAuthClick: () -> Unit
+) {
     Box(
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp)
     ) {
         Column(
-            modifier = Modifier.align(Alignment.Center)
+            modifier = Modifier.align(Alignment.Center),
+            horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Image(
-                modifier = Modifier.align(Alignment.CenterHorizontally),
                 painter = painterResource(id = R.drawable.money_bag),
-                contentDescription = stringResource(id = R.string.ic_launcher_description)
+                contentDescription = stringResource(id = R.string.ic_launcher_description),
             )
             Text(
                 text = stringResource(id = R.string.auth_screen_title),
                 style = MaterialTheme.typography.h5,
-                modifier = Modifier.padding(top = 32.dp).align(Alignment.CenterHorizontally)
+                modifier = Modifier.padding(top = 32.dp),
+            )
+            GoogleSignInButton(
+                modifier = Modifier
+                    .wrapContentSize()
+                    .padding(top = 32.dp),
+                onClick = onGoogleAuthClick
             )
         }
     }

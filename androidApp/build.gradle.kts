@@ -53,6 +53,8 @@ dependencies {
     implementation("androidx.activity:activity-compose:$jetpackComposeActivityVersion")
     implementation("com.google.accompanist:accompanist-appcompat-theme:0.16.0")
 
+    implementation("com.google.android.gms:play-services-auth:20.1.0")
+
     implementation(platform("com.google.firebase:firebase-bom:29.1.0"))
     implementation("dev.gitlive:firebase-auth:1.4.3")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")

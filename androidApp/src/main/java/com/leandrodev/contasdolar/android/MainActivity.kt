@@ -14,7 +14,9 @@ class MainActivity : AppCompatActivity() {
 
         auth.setContent {
             AppCompatTheme {
-                AuthScreen()
+                AuthScreen(
+                    onGoogleAuthClick = {}
+                )
             }
         }
     }
