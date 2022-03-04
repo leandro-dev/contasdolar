@@ -7,5 +7,9 @@ pluginManagement {
 }
 
 rootProject.name = "Contas_do_Lar"
+include(":aspects")
 include(":androidApp")
 include(":shared")
+include(":serialization")
+include(":storage")
+include(":network")

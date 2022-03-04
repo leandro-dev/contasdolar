@@ -1,0 +1,18 @@
+CREATE TABLE Wallet(
+id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+name TEXT NOT NULL UNIQUE,
+current_value INTEGER NOT NULL DEFAULT 0,
+active INTEGER AS Boolean NOT NULL
+);
+
+createWallet:
+INSERT INTO Wallet(name, current_value, active) VALUES(?, ?, ?);
+
+getWallets:
+SELECT * FROM Wallet;
+
+getWallet:
+SELECT * FROM Wallet WHERE name = ?;
+
+removeAllWallets:
+DELETE FROM Wallet;
