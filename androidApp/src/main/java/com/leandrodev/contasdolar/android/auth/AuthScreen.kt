@@ -1,4 +1,4 @@
-package com.leandrodev.contasdolar.android
+package com.leandrodev.contasdolar.android.auth
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
@@ -9,14 +9,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.viewinterop.AndroidView
-import com.google.android.gms.common.SignInButton
+import com.leandrodev.contasdolar.android.GoogleSignInButton
+import com.leandrodev.contasdolar.android.R
+import org.koin.androidx.compose.getViewModel
 
 @Composable
 internal fun AuthScreen(
-    onGoogleAuthClick: () -> Unit
+    viewModel: AuthViewModel = getViewModel()
 ) {
     Box(
         modifier = Modifier
@@ -40,7 +40,7 @@ internal fun AuthScreen(
                 modifier = Modifier
                     .wrapContentSize()
                     .padding(top = 32.dp),
-                onClick = onGoogleAuthClick
+                onClick = viewModel::onGoogleAuthClick
             )
         }
     }

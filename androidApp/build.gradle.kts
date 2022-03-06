@@ -8,6 +8,7 @@ val coroutinesVersion = "1.6.0-native-mt"
 val lifecycleVersion = "2.4.1"
 val jetpackComposeVersion = "1.1.1"
 val jetpackComposeActivityVersion = "1.4.0"
+val koinVersion = "3.1.5"
 
 android {
     compileSdk = 31
@@ -41,7 +42,7 @@ android {
 dependencies {
     kapt("androidx.lifecycle:lifecycle-compiler:$lifecycleVersion")
 
-    implementation(project(":shared"))
+    implementation(project(":aspects"))
     implementation(project(":storage"))
 
     // Jetpack Compose
@@ -63,4 +64,8 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.3")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion")
+
+
+    testImplementation("io.insert-koin:koin-test:$koinVersion")
+    testImplementation("io.insert-koin:koin-test-junit4:$koinVersion")
 }

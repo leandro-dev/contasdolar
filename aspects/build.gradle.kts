@@ -6,6 +6,7 @@ plugins {
 
 version = "1.0"
 val coroutinesVersion = "1.6.0-native-mt"
+val koinVersion = "3.1.5"
 
 kotlin {
     android()
@@ -27,19 +28,28 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
+                api("io.insert-koin:koin-core:$koinVersion")
             }
         }
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test-common"))
                 implementation(kotlin("test-annotations-common"))
+                implementation("io.insert-koin:koin-test:$koinVersion")
             }
         }
-        val androidMain by getting
+        val androidMain by getting {
+            dependencies {
+                api("io.insert-koin:koin-android:$koinVersion")
+                api("io.insert-koin:koin-androidx-compose:$koinVersion")
+                api("io.insert-koin:koin-androidx-navigation:$koinVersion")
+            }
+        }
         val androidTest by getting {
             dependencies {
                 implementation(kotlin("test-junit"))
                 implementation("junit:junit:4.13.2")
+                implementation("io.insert-koin:koin-test-junit4:$koinVersion")
             }
         }
         val iosX64Main by getting
