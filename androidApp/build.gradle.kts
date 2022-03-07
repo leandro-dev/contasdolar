@@ -68,6 +68,7 @@ dependencies {
     implementation("androidx.compose.material:material-icons-extended:$jetpackComposeVersion")
     implementation("androidx.activity:activity-compose:$jetpackComposeActivityVersion")
     implementation("com.google.accompanist:accompanist-appcompat-theme:0.16.0")
+    implementation("androidx.startup:startup-runtime:1.1.1")
 
     implementation("com.google.android.gms:play-services-auth:20.1.0")
 
@@ -81,6 +82,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion")
 
 
+    testImplementation("io.mockk:mockk:1.12.3")
     testImplementation("io.insert-koin:koin-test:$koinVersion")
     testImplementation("io.insert-koin:koin-test-junit4:$koinVersion")
     testImplementation("org.robolectric:robolectric:$robolectricVersion")
