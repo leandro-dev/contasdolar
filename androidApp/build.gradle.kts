@@ -9,6 +9,11 @@ val lifecycleVersion = "2.4.1"
 val jetpackComposeVersion = "1.1.1"
 val jetpackComposeActivityVersion = "1.4.0"
 val koinVersion = "3.1.5"
+val robolectricVersion = "4.7.3"
+val androidXTestExtKotlinRunnerVersion = "1.1.3"
+val androidXTestCoreVersion = "1.4.0"
+val coreTestingVersion = "2.1.0"
+val espressoVersion = "3.4.0"
 
 android {
     compileSdk = 31
@@ -18,6 +23,7 @@ android {
         targetSdk = 31
         versionCode = 1
         versionName = "1.0"
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         getByName("release") {
@@ -26,16 +32,24 @@ android {
     }
     buildFeatures {
         compose = true
+
+        // Disable unused AGP features
+        aidl = false
+        renderScript = false
+        shaders = false
     }
-    /*compileOptions {
+    compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
-                targetCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
         jvmTarget = "1.8"
-    }*/
+    }
     composeOptions {
         kotlinCompilerExtensionVersion = jetpackComposeVersion
+    }
+    testOptions.unitTests {
+        isIncludeAndroidResources = true
     }
 }
 
@@ -46,8 +60,8 @@ dependencies {
     implementation(project(":storage"))
 
     // Jetpack Compose
+    debugImplementation("androidx.compose.ui:ui-tooling:$jetpackComposeVersion")
     implementation("androidx.compose.ui:ui:$jetpackComposeVersion")
-    implementation("androidx.compose.ui:ui-tooling:$jetpackComposeVersion")
     implementation("androidx.compose.foundation:foundation:$jetpackComposeVersion")
     implementation("androidx.compose.material:material:$jetpackComposeVersion")
     implementation("androidx.compose.material:material-icons-extended:$jetpackComposeVersion")
@@ -68,4 +82,15 @@ dependencies {
 
     testImplementation("io.insert-koin:koin-test:$koinVersion")
     testImplementation("io.insert-koin:koin-test-junit4:$koinVersion")
+    testImplementation("org.robolectric:robolectric:$robolectricVersion")
+    testImplementation("androidx.test.ext:junit-ktx:$androidXTestExtKotlinRunnerVersion")
+    testImplementation("androidx.test:core-ktx:$androidXTestCoreVersion")
+
+
+    androidTestImplementation("androidx.arch.core:core-testing:$coreTestingVersion")
+    androidTestImplementation("androidx.test.espresso:espresso-contrib:$espressoVersion")
+    androidTestImplementation("androidx.test.espresso:espresso-core:$espressoVersion")
+    androidTestImplementation("androidx.compose.ui:ui-test:$jetpackComposeVersion")
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4:$jetpackComposeVersion")
+    debugRuntimeOnly("androidx.compose.ui:ui-test-manifest:$jetpackComposeVersion")
 }

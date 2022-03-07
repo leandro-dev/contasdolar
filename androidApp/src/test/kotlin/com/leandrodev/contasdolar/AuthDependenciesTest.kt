@@ -10,7 +10,7 @@ import org.koin.test.get
 import kotlin.test.assertNotNull
 
 
-class KotlinDependenciesTest : KoinTest {
+class AuthDependenciesTest : KoinTest {
     @get:Rule
     val koinTestRule = KoinTestRule.create {
         // TODO Find and include the provided dependency that makes the following line to crash
