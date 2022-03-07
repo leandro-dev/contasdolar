@@ -61,6 +61,7 @@ dependencies {
 
     // Jetpack Compose
     debugImplementation("androidx.compose.ui:ui-tooling:$jetpackComposeVersion")
+    implementation("androidx.compose.ui:ui-tooling-preview:$jetpackComposeVersion")
     implementation("androidx.compose.ui:ui:$jetpackComposeVersion")
     implementation("androidx.compose.foundation:foundation:$jetpackComposeVersion")
     implementation("androidx.compose.material:material:$jetpackComposeVersion")
