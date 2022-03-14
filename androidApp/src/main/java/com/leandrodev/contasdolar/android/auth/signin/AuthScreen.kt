@@ -1,4 +1,4 @@
-package com.leandrodev.contasdolar.android.auth
+package com.leandrodev.contasdolar.android.auth.signin
 
 import android.widget.Toast
 import androidx.compose.foundation.Image
@@ -14,11 +14,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.leandrodev.contasdolar.android.GoogleSignInButton
 import com.leandrodev.contasdolar.android.R
 import com.leandrodev.contasdolar.android.auth.google.GoogleSignInLauncher
 import com.leandrodev.contasdolar.android.auth.google.SignInProvider
+import com.leandrodev.contasdolar.android.model.User
 import org.koin.androidx.compose.get
 import org.koin.androidx.compose.getViewModel
 
@@ -75,13 +75,13 @@ internal fun AuthScreen(
 @Preview
 @Composable
 private fun previewAuthScreen() {
-    AuthScreen(AuthViewModelImpl(LocalContext.current), object: SignInProvider {
+    AuthScreen(AuthViewModelImpl(LocalContext.current), object : SignInProvider {
         @Composable
         override fun rememberGoogleSignInLauncher(
-            onSuccessListener: (GoogleSignInAccount) -> Unit,
+            onSuccessListener: (User) -> Unit,
             onErrorListener: (() -> Unit)?
         ): GoogleSignInLauncher {
-            return object: GoogleSignInLauncher {
+            return object : GoogleSignInLauncher {
                 override fun launchIntent() = Unit
             }
         }

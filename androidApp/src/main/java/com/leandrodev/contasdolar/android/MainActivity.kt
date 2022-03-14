@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.ui.platform.ComposeView
 import com.google.accompanist.appcompattheme.AppCompatTheme
-import com.leandrodev.contasdolar.android.auth.AuthScreen
+import com.leandrodev.contasdolar.android.auth.state.AuthStateScreen
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
         auth.setContent {
             AppCompatTheme {
-                AuthScreen()
+                AuthStateScreen()
             }
         }
     }

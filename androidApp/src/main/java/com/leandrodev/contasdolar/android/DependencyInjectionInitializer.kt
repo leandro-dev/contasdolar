@@ -2,7 +2,8 @@ package com.leandrodev.contasdolar.android
 
 import android.content.Context
 import androidx.startup.Initializer
-import com.leandrodev.contasdolar.android.auth.authModule
+import com.leandrodev.contasdolar.android.auth.signin.authModule
+import com.leandrodev.contasdolar.android.auth.state.authStateModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.KoinApplication
@@ -31,5 +32,5 @@ fun KoinApplication.configureDependencies(
 ) {
     androidLogger(if (BuildConfig.DEBUG) Level.ERROR else Level.NONE)
     androidContext(androidContext)
-    modules(authModule)
+    modules(authModule, authStateModule)
 }

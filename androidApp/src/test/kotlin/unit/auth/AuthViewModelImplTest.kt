@@ -2,7 +2,7 @@ package unit.auth
 
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.leandrodev.contasdolar.android.auth.AuthViewModelImpl
+import com.leandrodev.contasdolar.android.auth.signin.AuthViewModelImpl
 import org.junit.Test
 import org.junit.runner.RunWith
 

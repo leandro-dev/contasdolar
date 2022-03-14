@@ -1,4 +1,4 @@
-package com.leandrodev.contasdolar.android.auth
+package com.leandrodev.contasdolar.android.auth.signin
 
 import com.leandrodev.contasdolar.android.auth.google.SignInProvider
 import com.leandrodev.contasdolar.android.auth.google.SignInProviderImpl

@@ -1,7 +1,7 @@
-package com.leandrodev.contasdolar.android.auth
+package com.leandrodev.contasdolar.android.auth.signin
 
 import android.content.Context
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.leandrodev.contasdolar.android.model.User
 import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.flow.MutableSharedFlow
 
@@ -9,7 +9,7 @@ internal class AuthViewModelImpl(
     private val context: Context
 ) : AuthViewModel() {
     override val actions = MutableSharedFlow<ViewActions>(
-        extraBufferCapacity = 1,
+        extraBufferCapacity = 100,
         onBufferOverflow = BufferOverflow.DROP_OLDEST
     )
 
@@ -17,7 +17,7 @@ internal class AuthViewModelImpl(
         actions.tryEmit(ViewActions.SignInWithGoogle())
     }
 
-    override fun onGoogleAuthSuccess(account: GoogleSignInAccount) {
+    override fun onGoogleAuthSuccess(account: User) {
         actions.tryEmit(ViewActions.Authenticated)
     }
 

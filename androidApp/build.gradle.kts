@@ -1,8 +1,8 @@
 plugins {
     id("com.android.application")
     kotlin("android")
-    id("com.google.gms.google-services")
     kotlin("kapt")
+    id("com.google.gms.google-services")
 }
 val coroutinesVersion = "1.6.0-native-mt"
 val lifecycleVersion = "2.4.1"

@@ -2,7 +2,8 @@ package integration
 
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.leandrodev.contasdolar.android.auth.authModule
+import com.leandrodev.contasdolar.android.auth.signin.authModule
+import com.leandrodev.contasdolar.android.auth.state.authStateModule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.koin.android.ext.koin.androidContext
@@ -18,7 +19,7 @@ class DependencyInjectionTest : KoinTest {
     fun `should have valid auth DI configuration`() {
         checkModules {
             androidContext(ApplicationProvider.getApplicationContext())
-            modules(authModule)
+            modules(authModule, authStateModule)
         }
     }
 
