@@ -56,6 +56,7 @@ android {
 dependencies {
     kapt("androidx.lifecycle:lifecycle-compiler:$lifecycleVersion")
 
+    implementation(project(":shared"))
     implementation(project(":aspects"))
     implementation(project(":storage"))
 

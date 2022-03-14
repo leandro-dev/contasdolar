@@ -5,6 +5,7 @@ plugins {
 }
 
 version = "1.0"
+val lifecycleVersion = "2.4.1"
 
 kotlin {
     android()
@@ -30,7 +31,10 @@ kotlin {
                 implementation(kotlin("test-annotations-common"))
             }
         }
-        val androidMain by getting
+        val androidMain by getting {
+            dependencies {implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion")
+            }
+        }
         val androidTest by getting {
             dependencies {
                 implementation(kotlin("test-junit"))
