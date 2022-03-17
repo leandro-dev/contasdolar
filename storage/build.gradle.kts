@@ -3,6 +3,7 @@ plugins {
     kotlin("native.cocoapods")
     id("com.android.library")
     id("com.squareup.sqldelight")
+    id("org.jetbrains.kotlin.plugin.serialization")
 }
 
 version = "1.0"
@@ -12,6 +13,7 @@ val androidXTestExtKotlinRunnerVersion = "1.1.3"
 val androidXTestCoreVersion = "1.4.0"
 val robolectricVersion = "4.7.3"
 val firebaseKotlinSdkVersion = "1.4.3"
+val serializationVersion = "1.3.2"
 
 kotlin {
     android()
@@ -36,6 +38,7 @@ kotlin {
                 implementation("com.squareup.sqldelight:runtime:$sqlDelightVersion")
                 implementation("dev.gitlive:firebase-firestore:$firebaseKotlinSdkVersion")
                 implementation("dev.gitlive:firebase-firestore:1.4.3")
+                implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:$serializationVersion")
             }
         }
         val commonTest by getting {

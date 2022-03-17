@@ -1,7 +1,7 @@
 package com.leandrodev.storage
 
 import com.leandrodev.expenses.Expenses
-import com.leandrodev.expenses.Wallet
+import com.leandrodev.expenses.WalletQsldelight
 
 internal class Database(databaseDriverFactory: DatabaseDriverFactory) {
     private val database = Expenses(databaseDriverFactory.createDriver())
@@ -11,11 +11,11 @@ internal class Database(databaseDriverFactory: DatabaseDriverFactory) {
         dbQuery.removeAllWallets()
     }
 
-    internal fun getAllWallets(): List<Wallet> {
-        return dbQuery.getWallets(::Wallet).executeAsList()
+    internal fun getAllWallets(): List<WalletQsldelight> {
+        return dbQuery.getWallets(::WalletQsldelight).executeAsList()
     }
 
-    internal fun getWallet(name: String): Wallet? {
+    internal fun getWallet(name: String): WalletQsldelight? {
         return dbQuery.getWallet(name).executeAsOneOrNull()
     }
 

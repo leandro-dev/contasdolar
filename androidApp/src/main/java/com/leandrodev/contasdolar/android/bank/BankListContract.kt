@@ -1,8 +1,8 @@
 package com.leandrodev.contasdolar.android.bank
 
 import com.leandrodev.contasdolar.MppViewModel
-import com.leandrodev.contasdolar.android.model.Wallet
 import com.leandrodev.contasdolar.android.utils.ViewState
+import com.leandrodev.storage.model.Wallet
 
 sealed interface BankListState {
     object Loading : BankListState

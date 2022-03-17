@@ -1,7 +1,7 @@
-package com.leandrodev.contasdolar.android.model
+package com.leandrodev.storage.model
 
 data class Wallet(
-    val id: Long,
+    val id: String,
     val name: String,
     val currentValue: Long,
     val active: Boolean,
