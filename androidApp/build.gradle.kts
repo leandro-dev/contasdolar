@@ -14,6 +14,8 @@ val androidXTestExtKotlinRunnerVersion = "1.1.3"
 val androidXTestCoreVersion = "1.4.0"
 val coreTestingVersion = "2.1.0"
 val espressoVersion = "3.4.0"
+val startupRuntimeVersion = "1.1.1"
+val navigationComposeVersion = "2.4.1"
 
 android {
     compileSdk = 31
@@ -69,7 +71,8 @@ dependencies {
     implementation("androidx.compose.material:material-icons-extended:$jetpackComposeVersion")
     implementation("androidx.activity:activity-compose:$jetpackComposeActivityVersion")
     implementation("com.google.accompanist:accompanist-appcompat-theme:0.16.0")
-    implementation("androidx.startup:startup-runtime:1.1.1")
+    implementation("androidx.startup:startup-runtime:$startupRuntimeVersion")
+    implementation("androidx.navigation:navigation-compose:$navigationComposeVersion")
 
     implementation("com.google.android.gms:play-services-auth:20.1.0")
 

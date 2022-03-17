@@ -24,6 +24,7 @@ import org.koin.androidx.compose.getViewModel
 
 @Composable
 internal fun AuthScreen(
+    modifier: Modifier = Modifier,
     viewModel: AuthViewModel = getViewModel(),
     signInProvider: SignInProvider = get(),
 ) {
@@ -45,7 +46,7 @@ internal fun AuthScreen(
         }
     }
     Box(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxSize()
             .padding(16.dp)
     ) {
@@ -75,15 +76,18 @@ internal fun AuthScreen(
 @Preview
 @Composable
 private fun previewAuthScreen() {
-    AuthScreen(AuthViewModelImpl(LocalContext.current), object : SignInProvider {
-        @Composable
-        override fun rememberGoogleSignInLauncher(
-            onSuccessListener: (User) -> Unit,
-            onErrorListener: (() -> Unit)?
-        ): GoogleSignInLauncher {
-            return object : GoogleSignInLauncher {
-                override fun launchIntent() = Unit
+    AuthScreen(
+        viewModel = AuthViewModelImpl(LocalContext.current),
+        signInProvider = object : SignInProvider {
+            @Composable
+            override fun rememberGoogleSignInLauncher(
+                onSuccessListener: (User) -> Unit,
+                onErrorListener: (() -> Unit)?
+            ): GoogleSignInLauncher {
+                return object : GoogleSignInLauncher {
+                    override fun launchIntent() = Unit
+                }
             }
         }
-    })
+    )
 }
