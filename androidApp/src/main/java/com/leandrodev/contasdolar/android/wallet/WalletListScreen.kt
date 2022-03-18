@@ -1,31 +1,34 @@
 package com.leandrodev.contasdolar.android.wallet
 
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.Button
-import androidx.compose.material.Card
-import androidx.compose.material.Text
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import coil.compose.AsyncImage
 import com.google.accompanist.appcompattheme.AppCompatTheme
+import com.leandrodev.contasdolar.android.R
 import com.leandrodev.storage.model.Wallet
 import dev.gitlive.firebase.Firebase
 import dev.gitlive.firebase.auth.auth
 import kotlinx.coroutines.launch
 import org.koin.androidx.compose.getViewModel
+import java.text.NumberFormat
+import java.util.*
 
 @Composable
 fun WalletListScreen(
@@ -39,12 +42,19 @@ fun WalletListScreen(
             Text(text = "Authenticated. Loading bank list...")
         }
         (state as? WalletListState.Content)?.let { safeState ->
-            LazyColumn {
+            LazyColumn(
+                modifier = Modifier.fillMaxWidth(),
+                verticalArrangement = Arrangement.spacedBy(8.dp),
+                contentPadding = PaddingValues(all = 8.dp),
+            ) {
                 items(
                     items = safeState.wallets,
                     key = { it.id },
                 ) { wallet ->
-                    WalletCard(wallet = wallet)
+                    WalletCard(
+                        modifier = Modifier.fillMaxWidth(),
+                        wallet = wallet,
+                    )
                 }
             }
         }
@@ -72,13 +82,19 @@ fun WalletCard(
         ) {
             val (image, title, balance) = createRefs()
             AsyncImage(
-                modifier = Modifier.size(30.dp).constrainAs(image) {
-                    top.linkTo(parent.top)
-                    start.linkTo(parent.start)
-                    width = Dimension.wrapContent
-                    height = Dimension.wrapContent
-                },
+                modifier = Modifier
+                    .clip(RoundedCornerShape(size = 16.dp))
+                    .size(65.dp)
+                    .border(width = 50.dp, color = Color.Transparent)
+                    .constrainAs(image) {
+                        top.linkTo(parent.top)
+                        bottom.linkTo(parent.bottom)
+                        start.linkTo(parent.start)
+                        width = Dimension.wrapContent
+                        height = Dimension.wrapContent
+                    },
                 model = wallet.imageUrl,
+                placeholder = painterResource(id = R.drawable.money_bag),
                 contentDescription = null,
             )
             Text(
@@ -86,30 +102,53 @@ fun WalletCard(
                     top.linkTo(image.top)
                     start.linkTo(image.end, margin = 8.dp)
                     width = Dimension.preferredWrapContent
-                    height = Dimension.preferredWrapContent
+                    height = Dimension.wrapContent
                 },
-                text = wallet.name
+                style = MaterialTheme.typography.h5,
+                text = wallet.name,
             )
-            Text(
+            MoneyText(
                 modifier = Modifier.constrainAs(balance) {
                     top.linkTo(title.bottom, margin = 8.dp)
-                    start.linkTo(title.start)
+                    start.linkTo(image.end, margin = 8.dp)
                     width = Dimension.preferredWrapContent
-                    height = Dimension.preferredWrapContent
+                    height = Dimension.wrapContent
                 },
-                text = wallet.currentValue.toString(),
+                style = MaterialTheme.typography.subtitle1,
+                value = wallet.currentValue,
             )
         }
     }
 }
 
-@Preview(widthDp = 800, heightDp = 200)
+@Composable
+fun MoneyText(
+    modifier: Modifier = Modifier,
+    style: TextStyle = LocalTextStyle.current,
+    value: Long,
+) {
+    val locale = Locale("pt", "BR")
+    val format = NumberFormat.getCurrencyInstance(locale)
+    format.maximumFractionDigits = 2
+    val formattedText = format.format(value)
+
+    Text(
+        modifier = modifier,
+        style = style,
+        text = formattedText,
+    )
+}
+
+@Preview(widthDp = 400, heightDp = 200)
 @Composable
 private fun PreviewWalletCard() {
-    val wallet = Wallet("a", "LeConta", 10, true,
-        "https://play-lh.googleusercontent.com/aFWiT2lTa9CYBpyPjfgfNHd0r5puwKRGj2rHpdPTNrz2N9LXgN_MbLjePd1OTc0E8Rl1=s180-rw"
-    )
+    val wallet = Wallet("a", "LeConta", 10, true, "")
     AppCompatTheme {
-        WalletCard(wallet = wallet)
+        WalletCard(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(all = 8.dp),
+            wallet = wallet,
+        )
     }
 }
