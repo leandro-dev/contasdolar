@@ -1,4 +1,4 @@
-package com.leandrodev.contasdolar.android.bank
+package com.leandrodev.contasdolar.android.wallet
 
 import androidx.lifecycle.viewModelScope
 import com.leandrodev.contasdolar.android.utils.MutableViewState
@@ -6,15 +6,15 @@ import com.leandrodev.contasdolar.android.utils.createViewAction
 import com.leandrodev.storage.getWalletListFlow
 import kotlinx.coroutines.launch
 
-class BankListViewModelImpl : BankListViewModel() {
-    override val state: MutableViewState<BankListState> = createViewAction()
+class WalletListViewModelImpl : WalletListViewModel() {
+    override val state: MutableViewState<WalletListState> = createViewAction()
 
     init {
         viewModelScope.launch {
-            state.emit(BankListState.Loading)
+            state.emit(WalletListState.Loading)
 
             getWalletListFlow().collect { walletList ->
-                state.emit(BankListState.Content(walletList))
+                state.emit(WalletListState.Content(walletList))
             }
         }
     }

@@ -12,9 +12,10 @@ data class WalletModelDataSource(
     val active: Boolean,
     val currentValue: Long,
     val name: String,
+    val imageUrl: String?,
 )
 
-suspend fun getWalletListFlow(): Flow<List<Wallet>> {
+fun getWalletListFlow(): Flow<List<Wallet>> {
     val collection = Firebase.firestore
         .collection("finance")
         .document("wallet")
@@ -27,7 +28,8 @@ suspend fun getWalletListFlow(): Flow<List<Wallet>> {
                 id = id,
                 name = data.name,
                 currentValue = data.currentValue,
-                active = data.active
+                active = data.active,
+                imageUrl = data.imageUrl ?: "",
             )
         }
     }

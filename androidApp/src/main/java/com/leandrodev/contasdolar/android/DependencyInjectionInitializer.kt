@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.startup.Initializer
 import com.leandrodev.contasdolar.android.auth.signin.authModule
 import com.leandrodev.contasdolar.android.auth.state.authStateModule
-import com.leandrodev.contasdolar.android.bank.bankListModule
+import com.leandrodev.contasdolar.android.wallet.walletListModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.KoinApplication
@@ -33,5 +33,5 @@ fun KoinApplication.configureDependencies(
 ) {
     androidLogger(if (BuildConfig.DEBUG) Level.ERROR else Level.NONE)
     androidContext(androidContext)
-    modules(authModule, authStateModule, bankListModule)
+    modules(authModule, authStateModule, walletListModule)
 }

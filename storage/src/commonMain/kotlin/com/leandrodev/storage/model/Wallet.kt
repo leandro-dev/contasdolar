@@ -5,4 +5,5 @@ data class Wallet(
     val name: String,
     val currentValue: Long,
     val active: Boolean,
+    val imageUrl: String,
 )

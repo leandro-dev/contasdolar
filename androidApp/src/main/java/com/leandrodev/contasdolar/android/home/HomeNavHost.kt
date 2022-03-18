@@ -5,7 +5,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.leandrodev.contasdolar.android.bank.BankListScreen
+import com.leandrodev.contasdolar.android.wallet.WalletListScreen
 import com.leandrodev.contasdolar.android.home.HomeScreen.BankList
 
 @Composable
@@ -19,7 +19,7 @@ fun HomeNavHost(
         modifier = modifier,
     ) {
         composable(BankList.name) {
-            BankListScreen()
+            WalletListScreen()
         }
     }
 }

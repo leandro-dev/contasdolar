@@ -16,6 +16,8 @@ val coreTestingVersion = "2.1.0"
 val espressoVersion = "3.4.0"
 val startupRuntimeVersion = "1.1.1"
 val navigationComposeVersion = "2.4.1"
+val coilVersion = "2.0.0-rc01"
+val constraintLayoutComposeVersion = "1.0.0"
 
 android {
     compileSdk = 31
@@ -73,12 +75,14 @@ dependencies {
     implementation("com.google.accompanist:accompanist-appcompat-theme:0.16.0")
     implementation("androidx.startup:startup-runtime:$startupRuntimeVersion")
     implementation("androidx.navigation:navigation-compose:$navigationComposeVersion")
+    implementation("androidx.constraintlayout:constraintlayout-compose:$constraintLayoutComposeVersion")
 
     implementation("com.google.android.gms:play-services-auth:20.1.0")
 
     implementation(platform("com.google.firebase:firebase-bom:29.1.0"))
     implementation("dev.gitlive:firebase-auth:1.4.3")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
+    implementation("io.coil-kt:coil-compose:$coilVersion")
     implementation("com.google.android.material:material:1.5.0")
     implementation("androidx.appcompat:appcompat:1.4.1")
     implementation("androidx.constraintlayout:constraintlayout:2.1.3")
