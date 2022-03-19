@@ -1,4 +1,4 @@
-od::Spec.new do |spec|
+Pod::Spec.new do |spec|
     spec.name                     = 'data'
     spec.version                  = '1.0'
     spec.homepage                 = 'Link to the Shared Module homepage'

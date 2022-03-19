@@ -6,7 +6,6 @@ plugins {
 
 version = "1.0"
 val coroutinesVersion = "1.6.0-native-mt"
-val ktorVersion = "1.6.7"
 
 kotlin {
     android()
@@ -28,7 +27,6 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
-                implementation("io.ktor:ktor-client-core:$ktorVersion")
                 implementation(project(":serialization"))
             }
         }
@@ -40,7 +38,6 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
-                implementation("io.ktor:ktor-client-android:$ktorVersion")
             }
         }
         val androidTest by getting {
@@ -57,9 +54,6 @@ kotlin {
             iosX64Main.dependsOn(this)
             iosArm64Main.dependsOn(this)
             iosSimulatorArm64Main.dependsOn(this)
-            dependencies {
-                implementation("io.ktor:ktor-client-ios:$ktorVersion")
-            }
         }
         val iosX64Test by getting
         val iosArm64Test by getting
