@@ -21,7 +21,7 @@ import coil.compose.AsyncImage
 import com.leandrodev.contasdolar.android.R
 import com.leandrodev.contasdolar.android.ui.MoneyText
 import com.leandrodev.contasdolar.android.ui.theme.HomeTheme
-import com.leandrodev.storage.model.Wallet
+import com.leandrodev.data.model.Wallet
 
 @Composable
 fun WalletCard(

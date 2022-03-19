@@ -3,7 +3,7 @@ package com.leandrodev.contasdolar.android.wallet
 import androidx.lifecycle.viewModelScope
 import com.leandrodev.contasdolar.android.utils.MutableViewState
 import com.leandrodev.contasdolar.android.utils.createViewAction
-import com.leandrodev.storage.getWalletListFlow
+import com.leandrodev.data.getWalletListFlow
 import kotlinx.coroutines.launch
 
 class WalletListViewModelImpl : WalletListViewModel() {
