@@ -19,6 +19,7 @@ import com.leandrodev.contasdolar.android.R
 import com.leandrodev.contasdolar.android.auth.google.GoogleSignInLauncher
 import com.leandrodev.contasdolar.android.auth.google.SignInProvider
 import com.leandrodev.contasdolar.android.model.User
+import com.leandrodev.contasdolar.android.ui.theme.HomeTheme
 import org.koin.androidx.compose.get
 import org.koin.androidx.compose.getViewModel
 
@@ -76,18 +77,20 @@ internal fun AuthScreen(
 @Preview
 @Composable
 private fun previewAuthScreen() {
-    AuthScreen(
-        viewModel = AuthViewModelImpl(LocalContext.current),
-        signInProvider = object : SignInProvider {
-            @Composable
-            override fun rememberGoogleSignInLauncher(
-                onSuccessListener: (User) -> Unit,
-                onErrorListener: (() -> Unit)?
-            ): GoogleSignInLauncher {
-                return object : GoogleSignInLauncher {
-                    override fun launchIntent() = Unit
+    HomeTheme {
+        AuthScreen(
+            viewModel = AuthViewModelImpl(LocalContext.current),
+            signInProvider = object : SignInProvider {
+                @Composable
+                override fun rememberGoogleSignInLauncher(
+                    onSuccessListener: (User) -> Unit,
+                    onErrorListener: (() -> Unit)?
+                ): GoogleSignInLauncher {
+                    return object : GoogleSignInLauncher {
+                        override fun launchIntent() = Unit
+                    }
                 }
             }
-        }
-    )
+        )
+    }
 }
