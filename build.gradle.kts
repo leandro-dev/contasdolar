@@ -5,11 +5,12 @@ buildscript {
         gradlePluginPortal()
         google()
         mavenCentral()
+        mavenLocal()
     }
     dependencies {
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10")
         classpath("org.jetbrains.kotlin:kotlin-serialization:$kotlinVersion")
-        classpath("com.android.tools.build:gradle:7.0.4")
+        classpath("com.android.tools.build:gradle:7.1.2")
         classpath("com.google.gms:google-services:4.3.10")
     }
 }
@@ -18,6 +19,7 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+        mavenLocal()
     }
 }
 

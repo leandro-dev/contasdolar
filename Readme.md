@@ -15,6 +15,9 @@ This project is designed to be multiplatform with kotlin.
 The official Jetbrains libraries, such as kotlin, coroutines, datetime, will be accessible to all modules, like aspects.
 Other unofficial libraries, such as Firebase-kotlin-sdk (dev.gitlive) will be encapsulated in order to abstract and help future refactors.
 
+The only exception for the time being is for Dependency Injection library, because it is very hard to abstract. Different libraries such as Koin, Dagger, Kodein, have a very different syntax.
+The reason for choosing Kodein is because it targets several platforms on kotlin multiplatform projects.
+
 ### Android
 My main speciality is as Android Developer. I'm attempting to use only recent launched libraries and explore them.
 
