@@ -27,7 +27,6 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
-                implementation(project(":serialization"))
             }
         }
         val commonTest by getting {
