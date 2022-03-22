@@ -7,18 +7,14 @@ import kotlinx.coroutines.flow.map
 import kotlin.jvm.JvmInline
 
 @JvmInline
-value class Collection(val reference: CollectionReference) {
+value class Collection(private val reference: CollectionReference) {
     /**
      * Retrieve a flow from the desired collection that contains a set of values.
      *
      * @return a map where the key is the ID of the element, and the data as value.
      */
     inline fun <reified T : Any> getDataFlow(): Flow<Map<String, T>> {
-        return reference.snapshots.map { snapshot: QuerySnapshot ->
-            snapshot.documents.associate {
-                it.id to it.data<T>()
-            }
-        }
+        return getDataFlow<T>(::parseData)
     }
 
     fun <T : Any> getDataFlow(

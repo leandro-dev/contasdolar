@@ -16,7 +16,14 @@ val androidDependencies: List<Dependency> = listOf()
 val androidTestDependencies: List<Dependency> = listOf(
     "org.jetbrains.kotlin:kotlin-test-junit:${Versions.Kotlin.sdk}",
     "junit:junit:${Versions.Tests.junit}",
+    "org.robolectric:robolectric:${Versions.Tests.robolectric}",
+    "androidx.test.ext:junit-ktx:${Versions.Tests.androidxJunitRunner}",
+    "androidx.test:core-ktx:${Versions.Tests.androidxTestCore}",
 )
+
+object Data {
+    val commonFirestore = "dev.gitlive:firebase-firestore:${Versions.Data.firestore}"
+}
 
 fun KotlinSourceSet.applyDependencies(list: List<Dependency>) {
     this.dependencies {
