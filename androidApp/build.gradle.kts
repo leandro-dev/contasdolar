@@ -63,6 +63,7 @@ dependencies {
     implementation(project(":shared"))
     implementation(project(":aspects"))
     implementation(project(":data"))
+    implementation(project(":bills"))
 
     // Jetpack Compose
     debugImplementation("androidx.compose.ui:ui-tooling:$jetpackComposeVersion")

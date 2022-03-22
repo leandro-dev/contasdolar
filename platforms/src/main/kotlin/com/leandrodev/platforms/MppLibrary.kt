@@ -20,6 +20,7 @@ open class MppLibrary : Plugin<Project> {
         configureKotlinMultiplatform(target)
         configureAndroidLibrary(target)
         configureIosCocoapods(target)
+        configureKotlinSerialization(target)
     }
 
     private fun configureKotlinMultiplatform(project: Project) {
@@ -89,5 +90,9 @@ open class MppLibrary : Plugin<Project> {
                 baseName = "shared"
             }
         }
+    }
+
+    private fun configureKotlinSerialization(project: Project) {
+        project.plugins.apply("org.jetbrains.kotlin.plugin.serialization")
     }
 }

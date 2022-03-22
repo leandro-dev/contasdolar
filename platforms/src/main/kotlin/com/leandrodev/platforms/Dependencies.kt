@@ -6,6 +6,7 @@ typealias Dependency = String
 
 val kotlinCommonDependencies: List<Dependency> = listOf(
     "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.Kotlin.coroutines}",
+    "org.jetbrains.kotlinx:kotlinx-serialization-core:${Versions.Kotlin.serialization}",
 )
 val kotlinCommonTestDependencies: List<Dependency> = listOf(
     "org.jetbrains.kotlin:kotlin-test-common:${Versions.Kotlin.sdk}",

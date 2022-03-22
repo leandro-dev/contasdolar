@@ -12,10 +12,10 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.leandrodev.bills.Wallet
 import com.leandrodev.contasdolar.android.ui.theme.HomeTheme
 import com.leandrodev.contasdolar.android.utils.MutableViewState
 import com.leandrodev.contasdolar.android.utils.createViewAction
-import com.leandrodev.data.model.Wallet
 import dev.gitlive.firebase.Firebase
 import dev.gitlive.firebase.auth.auth
 import kotlinx.coroutines.launch

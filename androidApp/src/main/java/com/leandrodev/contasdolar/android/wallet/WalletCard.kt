@@ -18,10 +18,10 @@ import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import coil.compose.AsyncImage
+import com.leandrodev.bills.Wallet
 import com.leandrodev.contasdolar.android.R
 import com.leandrodev.contasdolar.android.ui.MoneyText
 import com.leandrodev.contasdolar.android.ui.theme.HomeTheme
-import com.leandrodev.data.model.Wallet
 
 @Composable
 fun WalletCard(
