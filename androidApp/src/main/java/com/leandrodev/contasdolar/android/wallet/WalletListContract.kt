@@ -1,6 +1,6 @@
 package com.leandrodev.contasdolar.android.wallet
 
-import com.leandrodev.bills.Wallet
+import com.leandrodev.bills.wallet.model.Wallet
 import com.leandrodev.contasdolar.MppViewModel
 import com.leandrodev.contasdolar.android.utils.ViewState
 

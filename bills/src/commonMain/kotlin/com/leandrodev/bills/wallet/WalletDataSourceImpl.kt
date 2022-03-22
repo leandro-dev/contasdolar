@@ -1,29 +1,16 @@
-package com.leandrodev.bills
+package com.leandrodev.bills.wallet
 
-import com.leandrodev.data.DatabaseImpl
+import com.leandrodev.bills.wallet.model.Wallet
+import com.leandrodev.data.Database
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import kotlinx.serialization.Serializable
 
-data class Wallet(
-    val id: String,
-    val name: String,
-    val currentValue: Long,
-    val active: Boolean,
-    val imageUrl: String,
-)
-
-@Serializable
-data class WalletModelDataSource(
-    val active: Boolean,
-    val currentValue: Long,
-    val name: String,
-    val imageUrl: String?,
-)
-
-object WalletDataSource {
-    fun getWalletListFlow(): Flow<List<Wallet>> {
-        val collection = DatabaseImpl
+class WalletDataSourceImpl(
+    private val database: Database
+) : WalletDataSource {
+    override fun getWalletListFlow(): Flow<List<Wallet>> {
+        val collection = database
             .getCollection("finance")
             .getDocument("wallet")
             .getCollection("wallet")
@@ -40,3 +27,11 @@ object WalletDataSource {
         }
     }
 }
+
+@Serializable
+private data class WalletModelDataSource(
+    val active: Boolean,
+    val currentValue: Long,
+    val name: String,
+    val imageUrl: String?,
+)

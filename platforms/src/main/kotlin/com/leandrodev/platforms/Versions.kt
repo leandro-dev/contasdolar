@@ -15,4 +15,17 @@ object Versions {
     object Data {
         const val firestore = "1.4.3"
     }
+    object DependencyInjection {
+        const val kodein = "7.10.0"
+    }
+    object Android {
+        const val jetpackCompose = "1.1.1"
+        object Jetpack {
+            const val compose = "1.1.1"
+            const val composeActivity = "1.4.0"
+            const val composeNavigation = "2.4.1"
+            const val composeConstraintLayout = "1.0.0"
+            const val startupRuntime = "1.1.1"
+        }
+    }
 }

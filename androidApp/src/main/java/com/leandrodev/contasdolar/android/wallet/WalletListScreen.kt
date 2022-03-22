@@ -12,7 +12,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.leandrodev.bills.Wallet
+import com.leandrodev.bills.wallet.model.Wallet
 import com.leandrodev.contasdolar.android.ui.theme.HomeTheme
 import com.leandrodev.contasdolar.android.utils.MutableViewState
 import com.leandrodev.contasdolar.android.utils.createViewAction

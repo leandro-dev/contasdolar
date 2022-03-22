@@ -33,5 +33,9 @@ gradlePlugin {
             id = "com.leandrodev.mpplibrary"
             implementationClass = "com.leandrodev.platforms.MppLibrary"
         }
+        register("android-application") {
+            id = "com.leandrodev.android-application"
+            implementationClass = "com.leandrodev.platforms.AndroidApplication"
+        }
     }
 }

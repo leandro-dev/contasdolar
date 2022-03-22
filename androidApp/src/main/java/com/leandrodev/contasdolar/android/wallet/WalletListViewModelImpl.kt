@@ -1,9 +1,10 @@
 package com.leandrodev.contasdolar.android.wallet
 
 import androidx.lifecycle.viewModelScope
-import com.leandrodev.bills.WalletDataSource
+import com.leandrodev.bills.wallet.WalletDataSourceImpl
 import com.leandrodev.contasdolar.android.utils.MutableViewState
 import com.leandrodev.contasdolar.android.utils.createViewAction
+import com.leandrodev.data.DatabaseImpl
 import kotlinx.coroutines.launch
 
 class WalletListViewModelImpl : WalletListViewModel() {
@@ -13,7 +14,7 @@ class WalletListViewModelImpl : WalletListViewModel() {
         viewModelScope.launch {
             state.emit(WalletListState.Loading)
 
-            WalletDataSource.getWalletListFlow().collect { walletList ->
+            WalletDataSourceImpl(DatabaseImpl).getWalletListFlow().collect { walletList ->
                 state.emit(WalletListState.Content(walletList))
             }
         }

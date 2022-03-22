@@ -1,6 +1,5 @@
 plugins {
-    id("com.android.application")
-    kotlin("android")
+    id("com.leandrodev.android-application")
     kotlin("kapt")
     id("com.google.gms.google-services")
 }
@@ -20,40 +19,16 @@ val coilVersion = "2.0.0-rc01"
 val constraintLayoutComposeVersion = "1.0.0"
 
 android {
-    compileSdk = 31
     defaultConfig {
         applicationId = "com.leandrodev.contasdolar.android"
-        minSdk = 23
-        targetSdk = 31
-        versionCode = 1
-        versionName = "1.0"
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
         }
     }
-    buildFeatures {
-        compose = true
-
-        // Disable unused AGP features
-        aidl = false
-        renderScript = false
-        shaders = false
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
     kotlinOptions {
         jvmTarget = "1.8"
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = jetpackComposeVersion
-    }
-    testOptions.unitTests {
-        isIncludeAndroidResources = true
     }
 }
 
@@ -67,16 +42,6 @@ dependencies {
 
     // Jetpack Compose
     debugImplementation("androidx.compose.ui:ui-tooling:$jetpackComposeVersion")
-    implementation("androidx.compose.ui:ui-tooling-preview:$jetpackComposeVersion")
-    implementation("androidx.compose.ui:ui:$jetpackComposeVersion")
-    implementation("androidx.compose.foundation:foundation:$jetpackComposeVersion")
-    implementation("androidx.compose.material:material:$jetpackComposeVersion")
-    implementation("androidx.compose.material:material-icons-extended:$jetpackComposeVersion")
-    implementation("androidx.activity:activity-compose:$jetpackComposeActivityVersion")
-    implementation("com.google.accompanist:accompanist-appcompat-theme:0.16.0")
-    implementation("androidx.startup:startup-runtime:$startupRuntimeVersion")
-    implementation("androidx.navigation:navigation-compose:$navigationComposeVersion")
-    implementation("androidx.constraintlayout:constraintlayout-compose:$constraintLayoutComposeVersion")
 
     implementation("com.google.android.gms:play-services-auth:20.1.0")
 
