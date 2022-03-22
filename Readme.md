@@ -36,6 +36,11 @@ App Layers:
 - This is still on backlog, if I can manage to have access to a Mac in order to fix the build I will work on this. Any external help is always welcome.
 
 
+### IDE issues
+I've experienced the IDE AndroidStudio Bumblebee showing false messages about compilations issues of the module "platforms".
+This must be related to the way the plugins are defined, but the project succeeds to sync and compile.
+If that's your case, close the project and delete "build" and ".gradle" folders from root project and "platform" dir.
+
 
 ## About the team
 - Me, Myself & I.

@@ -11,6 +11,7 @@ object Versions {
         const val robolectric = "4.7.3"
         const val androidxJunitRunner = "1.1.3"
         const val androidxTestCore = "1.4.0"
+        const val mockk = "1.12.3"
     }
     object Data {
         const val firestore = "1.4.3"
@@ -18,14 +19,28 @@ object Versions {
     object DependencyInjection {
         const val kodein = "7.10.0"
     }
+    object DataSource {
+        const val gitLiveFirebaseAuth = "1.4.3"
+    }
     object Android {
-        const val jetpackCompose = "1.1.1"
         object Jetpack {
             const val compose = "1.1.1"
             const val composeActivity = "1.4.0"
             const val composeNavigation = "2.4.1"
             const val composeConstraintLayout = "1.0.0"
+            const val composeImagesCoil = "2.0.0-rc01"
             const val startupRuntime = "1.1.1"
+        }
+        object Google {
+            const val playServicesAuth = "20.1.0"
+            const val firebaseBom = "29.1.0"
+            const val material = "1.5.0"
+            const val lifecycle = "2.4.1"
+            const val appCompat = "1.4.1"
+        }
+        object DeviceTest {
+            const val core = "2.1.0"
+            const val espresso = "3.4.0"
         }
     }
 }

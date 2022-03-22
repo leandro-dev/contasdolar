@@ -9,12 +9,6 @@ import org.jetbrains.kotlin.gradle.plugin.cocoapods.CocoapodsExtension
 import org.jetbrains.kotlin.gradle.plugin.cocoapods.KotlinCocoapodsPlugin.Companion.COCOAPODS_EXTENSION_NAME
 
 open class MppLibrary : Plugin<Project> {
-    companion object {
-        @JvmStatic
-        protected inline fun <reified T : Plugin<*>> Project.applyPlugin() {
-            pluginManager.apply(T::class.java)
-        }
-    }
 
     override fun apply(target: Project) {
         configureKotlinMultiplatform(target)
