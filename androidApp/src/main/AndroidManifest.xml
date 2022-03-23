@@ -24,7 +24,7 @@
             android:authorities="${applicationId}.androidx-startup"
             android:exported="false"
             tools:node="merge">
-            <meta-data  android:name="com.leandrodev.contasdolar.android.DependencyInjectionInitializer"
+            <meta-data  android:name="com.leandrodev.contasdolar.android.di.DependencyInjectionInitializer"
                 android:value="androidx.startup" />
         </provider>
     </application>

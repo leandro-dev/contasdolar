@@ -6,6 +6,6 @@ import com.leandrodev.data.DatabaseImpl
 import org.kodein.di.DI
 import org.kodein.di.bindSingleton
 
-val walletDi = DI {
+val billsDiModule = DI.Module("Bills") {
     bindSingleton<WalletDataSource> { WalletDataSourceImpl(DatabaseImpl) }
 }

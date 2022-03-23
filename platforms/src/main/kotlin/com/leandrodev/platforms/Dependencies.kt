@@ -31,6 +31,8 @@ val androidDependencies: List<Dependency> = listOf(
     "com.google.android.material:material:${Versions.Android.Google.material}",
     "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.Android.Google.lifecycle}",
     "androidx.appcompat:appcompat:${Versions.Android.Google.appCompat}",
+    "org.kodein.di:kodein-di-framework-android-x-viewmodel:${Versions.DependencyInjection.kodein}",
+    "org.kodein.di:kodein-di-framework-compose:${Versions.DependencyInjection.kodein}",
 )
 val androidTestDependencies: List<Dependency> = listOf(
     "org.jetbrains.kotlin:kotlin-test-junit:${Versions.Kotlin.sdk}",
