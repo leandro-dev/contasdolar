@@ -12,8 +12,8 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.leandrodev.bills.wallet.model.Wallet
+import com.leandrodev.contasdolar.android.di.getViewModel
 import com.leandrodev.contasdolar.android.ui.theme.HomeTheme
 import com.leandrodev.contasdolar.android.utils.MutableViewState
 import com.leandrodev.contasdolar.android.utils.createViewAction
@@ -24,7 +24,7 @@ import kotlinx.coroutines.launch
 @Composable
 fun WalletListScreen(
     modifier: Modifier = Modifier,
-    viewModel: WalletListViewModel = viewModel(),
+    viewModel: WalletListViewModel = getViewModel(),
 ) {
     val scope = rememberCoroutineScope()
     val state: WalletListState by viewModel.state.collectAsState(initial = WalletListState.Loading)

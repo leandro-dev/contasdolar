@@ -5,7 +5,6 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.leandrodev.contasdolar.android.di.getViewModel
 import com.leandrodev.contasdolar.android.home.HomeScreen.BankList
 import com.leandrodev.contasdolar.android.wallet.WalletListScreen
 
@@ -21,9 +20,7 @@ fun HomeNavHost(
     ) {
         composable(BankList.name) {
             HomeTopBar {
-                WalletListScreen(
-                    viewModel = getViewModel()
-                )
+                WalletListScreen()
             }
         }
     }
