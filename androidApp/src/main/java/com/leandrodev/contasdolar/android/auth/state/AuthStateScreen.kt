@@ -6,8 +6,8 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import com.leandrodev.contasdolar.android.auth.signin.AuthScreen
+import com.leandrodev.contasdolar.android.di.getViewModel
 import com.leandrodev.contasdolar.android.home.HomeNavHost
-import org.koin.androidx.compose.getViewModel
 
 @Composable
 fun AuthStateScreen(
