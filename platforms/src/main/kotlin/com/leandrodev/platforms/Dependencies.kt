@@ -48,6 +48,8 @@ val androidDeviceTestDependencies: List<Dependency> = listOf(
     "androidx.test.espresso:espresso-core:${Versions.Android.DeviceTest.espresso}",
     "androidx.compose.ui:ui-test:${Versions.Android.Jetpack.compose}",
     "androidx.compose.ui:ui-test-junit4:${Versions.Android.Jetpack.compose}",
+    // Required because dev.gitlive doesn't find auth version from firebase-bom
+    "com.google.firebase:firebase-auth-ktx:${Versions.Android.Google.firebaseBomAuth}",
 
 )
 val androidCustomConfigurations: Map<Configuration, List<Dependency>> = mapOf(

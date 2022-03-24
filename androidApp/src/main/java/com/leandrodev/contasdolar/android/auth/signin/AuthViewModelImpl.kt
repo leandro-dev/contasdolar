@@ -1,13 +1,10 @@
 package com.leandrodev.contasdolar.android.auth.signin
 
-import android.content.Context
 import com.leandrodev.contasdolar.android.model.User
 import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.flow.MutableSharedFlow
 
-internal class AuthViewModelImpl(
-    private val context: Context
-) : AuthViewModel() {
+internal class AuthViewModelImpl : AuthViewModel() {
     override val actions = MutableSharedFlow<ViewActions>(
         extraBufferCapacity = 100,
         onBufferOverflow = BufferOverflow.DROP_OLDEST

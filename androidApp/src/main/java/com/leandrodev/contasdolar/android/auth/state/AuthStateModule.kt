@@ -1,8 +1,8 @@
 package com.leandrodev.contasdolar.android.auth.state
 
-import org.koin.androidx.viewmodel.dsl.viewModel
-import org.koin.dsl.module
+import org.kodein.di.DI
+import org.kodein.di.bindProvider
 
-val authStateModule = module {
-    viewModel<AuthStateViewModel> { AuthStateViewModelImpl() }
+val authStateModule = DI.Module("AuthState") {
+    bindProvider<AuthStateViewModel> { AuthStateViewModelImpl() }
 }

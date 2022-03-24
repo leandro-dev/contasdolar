@@ -2,11 +2,11 @@ package com.leandrodev.contasdolar.android.auth.signin
 
 import com.leandrodev.contasdolar.android.auth.google.SignInProvider
 import com.leandrodev.contasdolar.android.auth.google.SignInProviderImpl
-import org.koin.android.ext.koin.androidContext
-import org.koin.androidx.viewmodel.dsl.viewModel
-import org.koin.dsl.module
+import org.kodein.di.DI
+import org.kodein.di.bindProvider
+import org.kodein.di.bindSingleton
 
-val authModule = module {
-    viewModel<AuthViewModel> { AuthViewModelImpl(androidContext()) }
-    single<SignInProvider> { SignInProviderImpl() }
+val authModule = DI.Module("Auth") {
+    bindProvider<AuthViewModel> { AuthViewModelImpl() }
+    bindSingleton<SignInProvider> { SignInProviderImpl() }
 }

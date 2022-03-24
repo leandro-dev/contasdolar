@@ -2,7 +2,6 @@ plugins {
     id("com.leandrodev.android-application")
     id("com.google.gms.google-services")
 }
-val koinVersion = "3.1.5"
 
 android {
     defaultConfig {
@@ -24,6 +23,4 @@ dependencies {
     implementation(project(":data"))
     implementation(project(":bills"))
 
-    testImplementation("io.insert-koin:koin-test:$koinVersion")
-    testImplementation("io.insert-koin:koin-test-junit4:$koinVersion")
 }
