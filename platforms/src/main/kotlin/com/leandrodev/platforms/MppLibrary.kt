@@ -79,8 +79,8 @@ open class MppLibrary : Plugin<Project> {
                 targetSdk = 31
             }
             compileOptions {
-                sourceCompatibility = JavaVersion.VERSION_1_8
-                targetCompatibility = JavaVersion.VERSION_1_8
+                sourceCompatibility = JavaVersion.VERSION_11
+                targetCompatibility = JavaVersion.VERSION_11
             }
             composeOptions {
                 kotlinCompilerExtensionVersion = Versions.Android.Jetpack.compose

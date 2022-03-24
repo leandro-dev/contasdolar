@@ -19,7 +19,7 @@ repositories {
     mavenCentral()
 }
 
-val kotlinVersion = "1.5.31"
+val kotlinVersion = "1.6.10"
 dependencies {
     compileOnly(gradleKotlinDsl())
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")

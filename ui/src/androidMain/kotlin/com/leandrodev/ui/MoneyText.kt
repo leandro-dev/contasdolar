@@ -1,4 +1,4 @@
-package com.leandrodev.contasdolar.android.ui
+package com.leandrodev.ui
 
 import androidx.compose.material.LocalTextStyle
 import androidx.compose.material.MaterialTheme

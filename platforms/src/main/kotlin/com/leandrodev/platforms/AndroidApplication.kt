@@ -38,8 +38,8 @@ open class AndroidApplication : Plugin<Project> {
                 shaders = false
             }
             compileOptions {
-                sourceCompatibility = JavaVersion.VERSION_1_8
-                targetCompatibility = JavaVersion.VERSION_1_8
+                sourceCompatibility = JavaVersion.VERSION_11
+                targetCompatibility = JavaVersion.VERSION_11
             }
             composeOptions {
                 kotlinCompilerExtensionVersion = Versions.Android.Jetpack.compose
