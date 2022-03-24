@@ -34,6 +34,7 @@ object Versions {
         object Google {
             const val playServicesAuth = "20.1.0"
             const val firebaseBom = "29.1.0"
+            const val firebaseBomAuth = "21.0.1"
             const val material = "1.5.0"
             const val lifecycle = "2.4.1"
             const val appCompat = "1.4.1"
