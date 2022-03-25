@@ -44,10 +44,10 @@ If that's your case, close the project, delete ".idea" folder from root project 
 ## About the team
 - Me, Myself & I.
 - Since I'm a developer, the processes to build this app are different from usual companies.
--- Product requests are written on a paper
--- This is projected to have only me and my girlfriend as users
--- Design preview is just a scratch on a paper as well
--- There is no boards with tasks. I develop based on what comes to my mind. Sometimes it's organizing the project, other times it's rushing a new feature. There's also a lot of researches about new libs.
--- It would be a waste of my time to organize the backlog and ideas since I'm the only stakeholder. My target is to have a MVP running on multiplatforms and use it to show my knowledge and programming skills.
--- I'm not using TDD until the project setup is done. This includes managing modules structures, libraries definitions and basic app running. For new features I expect to have automated tests covering main parts of the app.
--- It's been a great pleasure to develop this. I hope you enjoy :)
+  - There is a board to register the next steps
+  - This is projected to have only me and my girlfriend as users
+  - Design preview is just a scratch on a paper
+  - I develop based on what comes to my mind. Sometimes it's organizing the project, other times it's rushing a new feature. There's also a lot of researches about new libs.
+  - My target is to have a MVP running on multiplatforms and use it to show my knowledge and programming skills.
+  - I'm not using TDD until the project setup is done. This includes managing modules structures, libraries definitions and basic app running. For new features I expect to have automated tests covering main parts of the app.
+  - It's been a great pleasure to develop this. I hope you enjoy :)
