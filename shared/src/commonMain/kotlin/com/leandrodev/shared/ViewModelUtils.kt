@@ -1,4 +1,4 @@
-package com.leandrodev.contasdolar
+package com.leandrodev.shared
 
 import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.flow.MutableSharedFlow

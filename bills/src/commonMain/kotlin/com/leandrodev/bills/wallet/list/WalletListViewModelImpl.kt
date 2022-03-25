@@ -1,9 +1,9 @@
 package com.leandrodev.bills.wallet.list
 
 import com.leandrodev.bills.wallet.datasource.WalletDataSource
-import com.leandrodev.contasdolar.MutableViewState
-import com.leandrodev.contasdolar.createViewAction
-import com.leandrodev.contasdolar.scope
+import com.leandrodev.shared.MutableViewState
+import com.leandrodev.shared.createViewAction
+import com.leandrodev.shared.scope
 import kotlinx.coroutines.launch
 
 class WalletListViewModelImpl(

@@ -1,4 +1,4 @@
-package com.leandrodev.contasdolar
+package com.leandrodev.shared
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

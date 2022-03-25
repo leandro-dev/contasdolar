@@ -2,7 +2,7 @@ package com.leandrodev.bills.wallet.list
 
 import com.leandrodev.bills.wallet.model.Wallet
 import com.leandrodev.contasdolar.MppViewModel
-import com.leandrodev.contasdolar.ViewState
+import com.leandrodev.shared.ViewState
 
 sealed interface WalletListState {
     object Loading : WalletListState

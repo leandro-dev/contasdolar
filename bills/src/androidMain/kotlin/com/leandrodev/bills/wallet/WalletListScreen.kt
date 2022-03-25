@@ -16,9 +16,9 @@ import com.leandrodev.bills.wallet.list.WalletListState
 import com.leandrodev.bills.wallet.list.WalletListViewModel
 import com.leandrodev.bills.wallet.model.Wallet
 import com.leandrodev.ui.theme.HomeTheme
-import com.leandrodev.contasdolar.MutableViewState
-import com.leandrodev.contasdolar.createViewAction
-import com.leandrodev.contasdolar.getViewModel
+import com.leandrodev.shared.MutableViewState
+import com.leandrodev.shared.createViewAction
+import com.leandrodev.shared.getViewModel
 import dev.gitlive.firebase.Firebase
 import dev.gitlive.firebase.auth.auth
 import kotlinx.coroutines.launch
