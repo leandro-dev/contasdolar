@@ -8,7 +8,6 @@ pluginManagement {
 
     plugins {
         // This is necessary to avoid the plugins to be loaded multiple times in each subproject's classloader
-        kotlin("jvm") apply false
         kotlin("multiplatform") apply false
         kotlin("android") apply false
         id("com.android.application") apply false

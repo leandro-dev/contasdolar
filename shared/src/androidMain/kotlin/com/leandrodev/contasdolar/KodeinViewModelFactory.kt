@@ -1,4 +1,4 @@
-package com.leandrodev.contasdolar.android.di
+package com.leandrodev.contasdolar
 
 import androidx.compose.runtime.Composable
 import androidx.lifecycle.ViewModel

@@ -21,6 +21,7 @@ open class MppLibrary : Plugin<Project> {
 
     private fun configureKotlinMultiplatform(project: Project) {
         project.plugins.apply("org.jetbrains.kotlin.multiplatform")
+        project.plugins.apply("org.jetbrains.compose")
         project.extensions.configure(KotlinMultiplatformExtension::class.java) {
             android()
             iosX64()
@@ -74,6 +75,7 @@ open class MppLibrary : Plugin<Project> {
             }
             setCompileSdkVersion(31)
             sourceSets.getByName("main").manifest.srcFile("src/androidMain/AndroidManifest.xml")
+            sourceSets.getByName("main").res.srcDirs("src/androidMain/res")
             defaultConfig {
                 minSdk = 23
                 targetSdk = 31

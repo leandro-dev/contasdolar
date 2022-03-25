@@ -1,4 +1,4 @@
-package com.leandrodev.contasdolar.android.wallet
+package com.leandrodev.bills.wallet
 
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -18,9 +18,9 @@ import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import coil.compose.AsyncImage
+import com.leandrodev.bills.R
 import com.leandrodev.bills.wallet.model.Wallet
-import com.leandrodev.contasdolar.android.R
-import com.leandrodev.contasdolar.android.ui.theme.HomeTheme
+import com.leandrodev.ui.theme.HomeTheme
 import com.leandrodev.ui.MoneyText
 
 @Composable

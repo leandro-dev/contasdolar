@@ -1,4 +1,4 @@
-package com.leandrodev.contasdolar.android.ui.theme
+package com.leandrodev.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

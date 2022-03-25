@@ -1,8 +1,8 @@
-package com.leandrodev.contasdolar.android.wallet
+package com.leandrodev.bills.wallet.list
 
-import com.leandrodev.bills.wallet.WalletDataSource
-import com.leandrodev.contasdolar.android.utils.MutableViewState
-import com.leandrodev.contasdolar.android.utils.createViewAction
+import com.leandrodev.bills.wallet.datasource.WalletDataSource
+import com.leandrodev.contasdolar.MutableViewState
+import com.leandrodev.contasdolar.createViewAction
 import com.leandrodev.contasdolar.scope
 import kotlinx.coroutines.launch
 

@@ -11,7 +11,7 @@ import kotlinx.coroutines.CoroutineScope
  * With context-receivers from Kotlin, there seems to be a better approach that helps on the coroutine context issue.
  * https://github.com/Kotlin/KEEP/issues/259
  */
-expect abstract class MppViewModel {
+expect abstract class MppViewModel() {
 }
 
 expect val MppViewModel.scope: CoroutineScope

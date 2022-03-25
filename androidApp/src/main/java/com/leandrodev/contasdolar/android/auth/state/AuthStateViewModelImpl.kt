@@ -2,8 +2,8 @@ package com.leandrodev.contasdolar.android.auth.state
 
 import androidx.lifecycle.viewModelScope
 import com.leandrodev.contasdolar.android.model.User
-import com.leandrodev.contasdolar.android.utils.MutableViewState
-import com.leandrodev.contasdolar.android.utils.createViewAction
+import com.leandrodev.contasdolar.MutableViewState
+import com.leandrodev.contasdolar.createViewAction
 import com.leandrodev.contasdolar.android.utils.toUser
 import dev.gitlive.firebase.Firebase
 import dev.gitlive.firebase.auth.auth

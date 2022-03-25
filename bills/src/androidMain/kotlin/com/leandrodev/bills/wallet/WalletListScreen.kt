@@ -1,4 +1,4 @@
-package com.leandrodev.contasdolar.android.wallet
+package com.leandrodev.bills.wallet
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -12,11 +12,13 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.leandrodev.bills.wallet.list.WalletListState
+import com.leandrodev.bills.wallet.list.WalletListViewModel
 import com.leandrodev.bills.wallet.model.Wallet
-import com.leandrodev.contasdolar.android.di.getViewModel
-import com.leandrodev.contasdolar.android.ui.theme.HomeTheme
-import com.leandrodev.contasdolar.android.utils.MutableViewState
-import com.leandrodev.contasdolar.android.utils.createViewAction
+import com.leandrodev.ui.theme.HomeTheme
+import com.leandrodev.contasdolar.MutableViewState
+import com.leandrodev.contasdolar.createViewAction
+import com.leandrodev.contasdolar.getViewModel
 import dev.gitlive.firebase.Firebase
 import dev.gitlive.firebase.auth.auth
 import kotlinx.coroutines.launch
