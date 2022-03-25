@@ -1,6 +1,9 @@
+@file:Suppress("UnstableApiUsage")
+
 package com.leandrodev.platforms
 
-import com.android.build.gradle.BaseExtension
+import com.android.build.gradle.LibraryExtension
+import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.plugins.ExtensionAware
@@ -14,11 +17,11 @@ open class MppLibrary : Plugin<Project> {
         configureKotlinMultiplatform(target)
         configureAndroidLibrary(target)
         configureIosCocoapods(target)
-        configureKotlinSerialization(target)
     }
 
     private fun configureKotlinMultiplatform(project: Project) {
         project.plugins.apply("org.jetbrains.kotlin.multiplatform")
+        project.plugins.apply("org.jetbrains.compose")
         project.extensions.configure(KotlinMultiplatformExtension::class.java) {
             android()
             iosX64()
@@ -61,12 +64,31 @@ open class MppLibrary : Plugin<Project> {
 
     private fun configureAndroidLibrary(project: Project) {
         project.plugins.apply("com.android.library")
-        project.extensions.configure(BaseExtension::class.java) {
+        AndroidModule.configureAndroidDependencies(project)
+        project.extensions.configure(LibraryExtension::class.java) {
+            buildFeatures {
+                compose = true
+                // Disable unused AGP features
+                aidl = false
+                renderScript = false
+                shaders = false
+            }
             setCompileSdkVersion(31)
             sourceSets.getByName("main").manifest.srcFile("src/androidMain/AndroidManifest.xml")
+            sourceSets.getByName("main").res.srcDirs("src/androidMain/res")
             defaultConfig {
                 minSdk = 23
                 targetSdk = 31
+            }
+            compileOptions {
+                sourceCompatibility = JavaVersion.VERSION_11
+                targetCompatibility = JavaVersion.VERSION_11
+            }
+            composeOptions {
+                kotlinCompilerExtensionVersion = Versions.Android.Jetpack.compose
+            }
+            testOptions.unitTests {
+                isIncludeAndroidResources = true
             }
         }
     }
@@ -84,9 +106,5 @@ open class MppLibrary : Plugin<Project> {
                 baseName = "shared"
             }
         }
-    }
-
-    private fun configureKotlinSerialization(project: Project) {
-        project.plugins.apply("org.jetbrains.kotlin.plugin.serialization")
     }
 }

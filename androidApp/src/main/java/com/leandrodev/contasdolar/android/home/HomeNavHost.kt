@@ -6,7 +6,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.leandrodev.contasdolar.android.home.HomeScreen.BankList
-import com.leandrodev.contasdolar.android.wallet.WalletListScreen
+import com.leandrodev.bills.wallet.WalletListScreen
 
 @Composable
 fun HomeNavHost(

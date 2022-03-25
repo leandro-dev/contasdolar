@@ -18,10 +18,10 @@ import com.leandrodev.contasdolar.android.GoogleSignInButton
 import com.leandrodev.contasdolar.android.R
 import com.leandrodev.contasdolar.android.auth.google.GoogleSignInLauncher
 import com.leandrodev.contasdolar.android.auth.google.SignInProvider
-import com.leandrodev.contasdolar.android.di.get
-import com.leandrodev.contasdolar.android.di.getViewModel
 import com.leandrodev.contasdolar.android.model.User
-import com.leandrodev.contasdolar.android.ui.theme.HomeTheme
+import com.leandrodev.shared.get
+import com.leandrodev.shared.getViewModel
+import com.leandrodev.ui.theme.HomeTheme
 
 @Composable
 internal fun AuthScreen(

@@ -2,9 +2,12 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+        mavenCentral()
+        maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
     }
     dependencies {
         classpath("com.android.tools.build:gradle:7.1.2")
+        classpath("org.jetbrains.compose:compose-gradle-plugin:1.1.0")
     }
 }
 
@@ -16,10 +19,12 @@ plugins {
 
 repositories {
     google()
+    gradlePluginPortal()
     mavenCentral()
+    maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
 }
 
-val kotlinVersion = "1.5.31"
+val kotlinVersion = "1.6.10"
 dependencies {
     compileOnly(gradleKotlinDsl())
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")

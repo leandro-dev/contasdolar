@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.leandrodev.platforms
 
 import com.leandrodev.platforms.Configuration.*
@@ -62,7 +64,7 @@ val androidPlatform: List<Dependency> = listOf(
 )
 
 object Data {
-    val commonFirestore = "dev.gitlive:firebase-firestore:${Versions.Data.firestore}"
+    const val commonFirestore = "dev.gitlive:firebase-firestore:${Versions.Data.firestore}"
 }
 
 fun KotlinSourceSet.applyDependencies(list: List<Dependency>) {

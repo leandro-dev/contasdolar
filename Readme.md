@@ -39,7 +39,7 @@ App Layers:
 ### IDE issues
 I've experienced the IDE AndroidStudio Bumblebee showing false messages about compilations issues of the module "platforms".
 This must be related to the way the plugins are defined, but the project succeeds to sync and compile.
-If that's your case, close the project and delete "build" and ".gradle" folders from root project and "platform" dir.
+If that's your case, close the project, delete ".idea" folder from root project then reopen it.
 
 
 ## About the team

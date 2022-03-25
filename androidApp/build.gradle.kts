@@ -13,7 +13,7 @@ android {
         }
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "11"
     }
 }
 
@@ -22,5 +22,5 @@ dependencies {
     implementation(project(":aspects"))
     implementation(project(":data"))
     implementation(project(":bills"))
-
+    implementation(project(":ui"))
 }
