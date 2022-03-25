@@ -1,5 +1,3 @@
-// TODO Organize readme file
-
 # Home / Contas do Lar
 
 This app is designed to help me on my home automation.
@@ -25,7 +23,7 @@ App Layers:
 - For View we are using Android Compose only.
 - For ViewModel, we are using an adaptation in order to make it reusable for multiplatform.
 - There is a business layer to manage some in-app rules.
-- For DataSource we are using a NoSQL database with cached local storage and transparent sync with remote storage (Firestore).
+- For DataSource we are using a NoSQL database with cached local storage and automatic background sync with remote storage (Firestore).
 
 ### Web
 - It will be my first project with kotlin to web, so I still have to learn how to configure and make it run.
@@ -34,6 +32,7 @@ App Layers:
 - I really wanted to make this project to compile for iOS as well, but there is a big problem: I don't own a Mac.
 - I've attempted to use Bitrise in order to generate iOS builds, but it failed, was too complicated to investigate/solve.
 - This is still on backlog, if I can manage to have access to a Mac in order to fix the build I will work on this. Any external help is always welcome.
+- My next attempt will be using the plugin "Code with me" and asking a friends help. This is on backlog already.
 
 
 ### IDE issues
