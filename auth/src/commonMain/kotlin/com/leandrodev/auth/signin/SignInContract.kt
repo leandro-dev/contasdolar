@@ -1,7 +1,7 @@
-package com.leandrodev.contasdolar.android.auth.signin
+package com.leandrodev.auth.signin
 
+import com.leandrodev.auth.model.User
 import com.leandrodev.shared.MppViewModel
-import com.leandrodev.contasdolar.android.model.User
 import kotlinx.coroutines.flow.SharedFlow
 
 interface ViewActions {
@@ -9,7 +9,7 @@ interface ViewActions {
     object Authenticated : ViewActions
 }
 
-abstract class AuthViewModel : MppViewModel() {
+abstract class SignInViewModel : MppViewModel() {
     abstract val actions: SharedFlow<ViewActions>
     abstract fun onGoogleAuthClick()
     abstract fun onGoogleAuthSuccess(account: User)

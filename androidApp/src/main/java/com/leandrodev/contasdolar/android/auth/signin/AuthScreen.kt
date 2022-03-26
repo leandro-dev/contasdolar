@@ -14,11 +14,14 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.leandrodev.auth.signin.SignInViewModel
+import com.leandrodev.auth.signin.ViewActions
 import com.leandrodev.contasdolar.android.GoogleSignInButton
 import com.leandrodev.contasdolar.android.R
-import com.leandrodev.contasdolar.android.auth.google.GoogleSignInLauncher
-import com.leandrodev.contasdolar.android.auth.google.SignInProvider
-import com.leandrodev.contasdolar.android.model.User
+import com.leandrodev.auth.signin.GoogleSignInLauncher
+import com.leandrodev.auth.signin.SignInProvider
+import com.leandrodev.auth.model.User
+import com.leandrodev.auth.signin.SignInViewModelImpl
 import com.leandrodev.shared.get
 import com.leandrodev.shared.getViewModel
 import com.leandrodev.ui.theme.HomeTheme
@@ -26,7 +29,7 @@ import com.leandrodev.ui.theme.HomeTheme
 @Composable
 internal fun AuthScreen(
     modifier: Modifier = Modifier,
-    viewModel: AuthViewModel = getViewModel(),
+    viewModel: SignInViewModel = getViewModel(),
     signInProvider: SignInProvider = get(),
 ) {
     val launcher = signInProvider.rememberGoogleSignInLauncher(
@@ -79,7 +82,7 @@ internal fun AuthScreen(
 private fun previewAuthScreen() {
     HomeTheme {
         AuthScreen(
-            viewModel = AuthViewModelImpl(),
+            viewModel = SignInViewModelImpl(),
             signInProvider = object : SignInProvider {
                 @Composable
                 override fun rememberGoogleSignInLauncher(

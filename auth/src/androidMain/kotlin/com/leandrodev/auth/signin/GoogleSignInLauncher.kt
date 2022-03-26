@@ -1,4 +1,4 @@
-package com.leandrodev.contasdolar.android.auth.google
+package com.leandrodev.auth.signin
 
 interface GoogleSignInLauncher {
     fun launchIntent()

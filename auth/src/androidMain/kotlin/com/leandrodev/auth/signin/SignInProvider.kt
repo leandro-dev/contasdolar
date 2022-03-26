@@ -1,7 +1,7 @@
-package com.leandrodev.contasdolar.android.auth.google
+package com.leandrodev.auth.signin
 
 import androidx.compose.runtime.Composable
-import com.leandrodev.contasdolar.android.model.User
+import com.leandrodev.auth.model.User
 
 interface SignInProvider {
     @Composable

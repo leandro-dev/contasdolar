@@ -1,4 +1,4 @@
-package com.leandrodev.contasdolar.android.auth.google
+package com.leandrodev.auth.signin
 
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -8,16 +8,16 @@ import androidx.compose.ui.platform.LocalContext
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
-import com.leandrodev.contasdolar.android.R
-import com.leandrodev.contasdolar.android.model.User
-import com.leandrodev.contasdolar.android.utils.toUser
+import com.leandrodev.auth.R
+import com.leandrodev.auth.model.User
+import com.leandrodev.auth.utils.toUser
 import dev.gitlive.firebase.Firebase
 import dev.gitlive.firebase.auth.GoogleAuthProvider
 import dev.gitlive.firebase.auth.auth
 import kotlinx.coroutines.launch
 
 
-class SignInProviderImpl : SignInProvider {
+internal class SignInProviderImpl : SignInProvider {
     @Composable
     override fun rememberGoogleSignInLauncher(
         onSuccessListener: (User) -> Unit,

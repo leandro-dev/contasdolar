@@ -1,7 +1,7 @@
 package com.leandrodev.contasdolar.android.auth.state
 
 import com.leandrodev.shared.MppViewModel
-import com.leandrodev.contasdolar.android.model.User
+import com.leandrodev.auth.model.User
 import com.leandrodev.shared.ViewState
 
 sealed interface AuthState {

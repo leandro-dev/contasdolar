@@ -1,10 +1,10 @@
 package com.leandrodev.contasdolar.android.auth.state
 
 import androidx.lifecycle.viewModelScope
-import com.leandrodev.contasdolar.android.model.User
+import com.leandrodev.auth.model.User
 import com.leandrodev.shared.MutableViewState
 import com.leandrodev.shared.createViewAction
-import com.leandrodev.contasdolar.android.utils.toUser
+import com.leandrodev.auth.utils.toUser
 import dev.gitlive.firebase.Firebase
 import dev.gitlive.firebase.auth.auth
 import kotlinx.coroutines.flow.collectLatest
