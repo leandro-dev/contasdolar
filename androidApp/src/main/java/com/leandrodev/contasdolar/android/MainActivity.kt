@@ -3,7 +3,8 @@ package com.leandrodev.contasdolar.android
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.leandrodev.contasdolar.android.auth.state.AuthStateScreen
+import com.leandrodev.auth.state.AuthStateScreen
+import com.leandrodev.contasdolar.android.home.HomeNavHost
 import com.leandrodev.ui.theme.HomeTheme
 import org.kodein.di.DI
 import org.kodein.di.DIAware
@@ -16,7 +17,11 @@ class MainActivity : ComponentActivity(), DIAware {
         super.onCreate(savedInstanceState)
         setContent {
             HomeTheme {
-                AuthStateScreen()
+                AuthStateScreen(
+                    authenticatedContent = { modifier ->
+                        HomeNavHost(modifier)
+                    }
+                )
             }
         }
     }

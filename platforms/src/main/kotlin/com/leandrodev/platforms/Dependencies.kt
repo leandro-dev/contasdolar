@@ -11,7 +11,6 @@ val kotlinCommonDependencies: List<Dependency> = listOf(
     "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.Kotlin.coroutines}",
     "org.jetbrains.kotlinx:kotlinx-serialization-core:${Versions.Kotlin.serialization}",
     "org.kodein.di:kodein-di:${Versions.DependencyInjection.kodein}",
-    "dev.gitlive:firebase-auth:${Versions.DataSource.gitLiveFirebaseAuth}",
 )
 val kotlinCommonTestDependencies: List<Dependency> = listOf(
     "org.jetbrains.kotlin:kotlin-test-common:${Versions.Kotlin.sdk}",
@@ -65,6 +64,9 @@ val androidPlatform: List<Dependency> = listOf(
 
 object Data {
     const val commonFirestore = "dev.gitlive:firebase-firestore:${Versions.Data.firestore}"
+}
+object Auth {
+    const val commonFirebaseAuth = "dev.gitlive:firebase-auth:${Versions.DataSource.gitLiveFirebaseAuth}"
 }
 
 fun KotlinSourceSet.applyDependencies(list: List<Dependency>) {
