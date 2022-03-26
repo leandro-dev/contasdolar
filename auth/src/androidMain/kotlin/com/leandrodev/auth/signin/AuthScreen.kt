@@ -1,4 +1,4 @@
-package com.leandrodev.contasdolar.android.auth.signin
+package com.leandrodev.auth.signin
 
 import android.widget.Toast
 import androidx.compose.foundation.Image
@@ -14,14 +14,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.leandrodev.auth.signin.SignInViewModel
-import com.leandrodev.auth.signin.ViewActions
-import com.leandrodev.contasdolar.android.GoogleSignInButton
-import com.leandrodev.contasdolar.android.R
-import com.leandrodev.auth.signin.GoogleSignInLauncher
-import com.leandrodev.auth.signin.SignInProvider
+import com.leandrodev.auth.R
 import com.leandrodev.auth.model.User
-import com.leandrodev.auth.signin.SignInViewModelImpl
 import com.leandrodev.shared.get
 import com.leandrodev.shared.getViewModel
 import com.leandrodev.ui.theme.HomeTheme

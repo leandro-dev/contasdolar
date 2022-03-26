@@ -1,4 +1,4 @@
-package com.leandrodev.contasdolar.android.auth.state
+package com.leandrodev.auth.state
 
 import com.leandrodev.shared.MppViewModel
 import com.leandrodev.auth.model.User

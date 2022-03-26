@@ -1,20 +1,20 @@
-package com.leandrodev.contasdolar.android.auth.state
+package com.leandrodev.auth.state
 
-import androidx.lifecycle.viewModelScope
 import com.leandrodev.auth.model.User
 import com.leandrodev.shared.MutableViewState
 import com.leandrodev.shared.createViewAction
 import com.leandrodev.auth.utils.toUser
+import com.leandrodev.shared.scope
 import dev.gitlive.firebase.Firebase
 import dev.gitlive.firebase.auth.auth
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
-class AuthStateViewModelImpl : AuthStateViewModel() {
+internal class AuthStateViewModelImpl : AuthStateViewModel() {
     override val state: MutableViewState<AuthState> = createViewAction()
 
     init {
-        viewModelScope.launch { 
+        scope.launch {
             Firebase.auth.authStateChanged.collectLatest {
                 val user = Firebase.auth.currentUser?.toUser()
                 state.emit(getStateFromUser(user))

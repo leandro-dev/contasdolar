@@ -6,7 +6,7 @@ import com.leandrodev.shared.createViewAction
 import com.leandrodev.shared.scope
 import kotlinx.coroutines.launch
 
-class WalletListViewModelImpl(
+internal class WalletListViewModelImpl(
     private val walletDataSource: WalletDataSource,
 ) : WalletListViewModel() {
     override val state: MutableViewState<WalletListState> = createViewAction()

@@ -16,7 +16,6 @@ import dev.gitlive.firebase.auth.GoogleAuthProvider
 import dev.gitlive.firebase.auth.auth
 import kotlinx.coroutines.launch
 
-
 internal class SignInProviderImpl : SignInProvider {
     @Composable
     override fun rememberGoogleSignInLauncher(

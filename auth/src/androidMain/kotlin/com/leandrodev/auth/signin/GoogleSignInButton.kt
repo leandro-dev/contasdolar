@@ -1,10 +1,9 @@
-package com.leandrodev.contasdolar.android
+package com.leandrodev.auth.signin
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.viewinterop.AndroidView
 import com.google.android.gms.common.SignInButton
-
 
 @Composable
 fun GoogleSignInButton(
