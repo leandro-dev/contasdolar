@@ -22,4 +22,5 @@ dependencies {
     implementation(project(":data"))
     implementation(project(":bills"))
     implementation(project(":ui"))
+    implementation(project(":auth"))
 }
