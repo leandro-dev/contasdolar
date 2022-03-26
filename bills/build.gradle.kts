@@ -10,6 +10,7 @@ kotlin {
                 implementation(project(":shared"))
                 implementation(project(":data"))
                 implementation(project(":ui"))
+                implementation(project(":auth"))
             }
         }
     }

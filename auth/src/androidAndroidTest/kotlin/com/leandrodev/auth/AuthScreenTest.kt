@@ -1,8 +1,8 @@
-package com.leandrodev.contasdolar
+package com.leandrodev.auth
 
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createComposeRule
-import com.leandrodev.contasdolar.android.auth.signin.AuthScreen
+import com.leandrodev.auth.signin.AuthScreen
 import dev.gitlive.firebase.Firebase
 import dev.gitlive.firebase.auth.auth
 import org.junit.BeforeClass
