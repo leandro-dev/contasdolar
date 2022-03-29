@@ -5,7 +5,7 @@ plugins {
     id("org.jetbrains.compose")
 }
 group = "com.leandrodev.home.web"
-version = "1.0"
+version = "1.0.0-alpha01"
 
 // Add maven repositories
 repositories {
@@ -24,15 +24,8 @@ kotlin {
     sourceSets {
         val jsMain by getting {
             dependencies {
-//                implementation(compose.web.core)
-//                implementation(compose.runtime)
-                /*implementation("dev.gitlive:firebase-firestore:1.3.1") {
-                    version {
-                        this.require("v1.3.1")
-                        this.strictly("v1.3.1")
-                        branch = "master"
-                    }
-                }*/
+                implementation(compose.web.core)
+                implementation(compose.runtime)
             }
         }
     }

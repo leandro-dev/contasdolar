@@ -1,12 +1,12 @@
 buildscript {
     val kotlinVersion = "1.6.10"
 
-    repositories {
+repositories {
         gradlePluginPortal()
         google()
-        mavenCentral()
+    mavenCentral()
         mavenLocal()
-        maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
+    maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
     }
     dependencies {
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
@@ -19,7 +19,7 @@ buildscript {
 
 allprojects {
     repositories {
-        google()
+    google()
         mavenCentral()
         mavenLocal()
         maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
@@ -30,5 +30,5 @@ allprojects {
 // TODO Bind with existing task instead of creating a new one
 tasks.register("clean", Delete::class) {
     delete(rootProject.buildDir)
-}
+    }
 */

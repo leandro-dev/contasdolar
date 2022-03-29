@@ -38,7 +38,7 @@ sourceControl {
     }
 }
 
-rootProject.name = "Contas_do_Lar"
+rootProject.name = "home"
 
 includeBuild("platforms")
 
