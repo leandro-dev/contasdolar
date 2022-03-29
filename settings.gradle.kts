@@ -1,3 +1,5 @@
+import java.net.URI
+
 pluginManagement {
     repositories {
         google()
@@ -15,8 +17,24 @@ pluginManagement {
         id("org.jetbrains.compose") apply false
         id("com.android.application") apply false
         id("org.jetbrains.kotlin.kapt") apply false
+        id("org.jetbrains.kotlin.js") apply false
         id("org.jetbrains.kotlin.plugin.serialization") apply false
         id("org.jetbrains.kotlin.native.cocoapods") apply false
+    }
+}
+
+/*
+ * Project dev.gitlive version 1.4.3 does not yet contain the js(IR) required to work with compose.
+ * Remove this code when they publish another version
+ */
+sourceControl {
+    gitRepository(URI("https://github.com/GitLiveApp/firebase-kotlin-sdk.git")) {
+        producesModule("dev.gitlive:firebase-auth")
+        producesModule("dev.gitlive:firebase-firestore")
+//        plugins {
+//            id("org.jetbrains.kotlin.multiplatform")// version "1.5.31" apply false
+//            id("base")
+//        }
     }
 }
 
@@ -24,9 +42,15 @@ rootProject.name = "Contas_do_Lar"
 
 includeBuild("platforms")
 
+// Applications
 include(":androidApp")
+include(":webApp")
+
+// Core modules
 include(":shared")
 include(":data")
-include(":bills")
 include(":ui")
+
+// Feature modules
+include(":bills")
 include(":auth")

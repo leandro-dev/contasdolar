@@ -1,8 +1,9 @@
-@file:Suppress("UnstableApiUsage")
+@file:Suppress("UnstableApiUsage", "USELESS_CAST")
 
 package com.leandrodev.platforms
 
 import com.android.build.gradle.LibraryExtension
+import com.leandrodev.platforms.AndroidModule.kotlinOptions
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -23,72 +24,99 @@ open class MppLibrary : Plugin<Project> {
         project.plugins.apply("org.jetbrains.kotlin.multiplatform")
         project.plugins.apply("org.jetbrains.compose")
         project.extensions.configure(KotlinMultiplatformExtension::class.java) {
-            android()
-            iosX64()
-            iosArm64()
-            iosSimulatorArm64() // Make sure all ios dependencies support this target
-            sourceSets.run {
-                val commonMain = maybeCreate("commonMain").apply {
-                    applyDependencies(kotlinCommonDependencies)
-                }
-                val commonTest = maybeCreate("commonTest").apply {
-                    applyDependencies(kotlinCommonTestDependencies)
-                }
-                maybeCreate("androidMain").apply {
-                    applyDependencies(androidDependencies)
-                }
-                maybeCreate("androidTest").apply {
-                    applyDependencies(androidTestDependencies)
-                }
-                val iosX64Main = maybeCreate("iosX64Main")
-                val iosArm64Main = maybeCreate("iosArm64Main")
-                val iosSimulatorArm64Main = maybeCreate("iosSimulatorArm64Main")
-                create("iosMain") {
-                    dependsOn(commonMain)
-                    iosX64Main.dependsOn(this)
-                    iosArm64Main.dependsOn(this)
-                    iosSimulatorArm64Main.dependsOn(this)
-                }
-                val iosX64Test = maybeCreate("iosX64Test")
-                val iosArm64Test = maybeCreate("iosArm64Test")
-                val iosSimulatorArm64Test = maybeCreate("iosSimulatorArm64Test")
-                create("iosTest") {
-                    dependsOn(commonTest)
-                    iosX64Test.dependsOn(this)
-                    iosArm64Test.dependsOn(this)
-                    iosSimulatorArm64Test.dependsOn(this)
+            // This allows to edit with autocompletion when IDE fails to work properly
+            with(this as KotlinMultiplatformExtension) {
+                android()
+                /*js(IR) {
+                    browser()
+                }*/
+                /*iosX64()
+                iosArm64()
+                iosSimulatorArm64() // Make sure all ios dependencies support this target*/
+                sourceSets.run {
+                    val commonMain = maybeCreate("commonMain").apply {
+                        applyDependencies(kotlinCommonDependencies)
+                    }
+                    val commonTest = maybeCreate("commonTest").apply {
+                        applyDependencies(kotlinCommonTestDependencies)
+                    }
+                    maybeCreate("androidMain").apply {
+                        applyDependencies(androidDependencies)
+                    }
+                    maybeCreate("androidTest").apply {
+                        applyDependencies(androidTestDependencies)
+                    }
+                    /*maybeCreate("jsMain").apply {
+                        dependencies {
+                            implementation(compose.web.core)
+                            implementation(compose.runtime)
+                        }
+                    }*/
+                    /*val iosX64Main = maybeCreate("iosX64Main")
+                    val iosArm64Main = maybeCreate("iosArm64Main")
+                    val iosSimulatorArm64Main = maybeCreate("iosSimulatorArm64Main")
+                    create("iosMain") {
+                        dependsOn(commonMain)
+                        iosX64Main.dependsOn(this)
+                        iosArm64Main.dependsOn(this)
+                        iosSimulatorArm64Main.dependsOn(this)
+                    }
+                    val iosX64Test = maybeCreate("iosX64Test")
+                    val iosArm64Test = maybeCreate("iosArm64Test")
+                    val iosSimulatorArm64Test = maybeCreate("iosSimulatorArm64Test")
+                    create("iosTest") {
+                        dependsOn(commonTest)
+                        iosX64Test.dependsOn(this)
+                        iosArm64Test.dependsOn(this)
+                        iosSimulatorArm64Test.dependsOn(this)
+                    }*/
                 }
             }
         }
+
+/*        // A temporary workaround for a bug in jsRun invocation - see https://youtrack.jetbrains.com/issue/KT-48273
+        project.afterEvaluate {
+            rootProject.extensions.configure<NodeJsRootExtension> {
+                versions.webpackDevServer.version = "4.0.0"
+                versions.webpackCli.version = "4.9.0"
+            }
+        }*/
+
     }
 
     private fun configureAndroidLibrary(project: Project) {
         project.plugins.apply("com.android.library")
         AndroidModule.configureAndroidDependencies(project)
         project.extensions.configure(LibraryExtension::class.java) {
-            buildFeatures {
-                compose = true
-                // Disable unused AGP features
-                aidl = false
-                renderScript = false
-                shaders = false
-            }
-            setCompileSdkVersion(31)
-            sourceSets.getByName("main").manifest.srcFile("src/androidMain/AndroidManifest.xml")
-            sourceSets.getByName("main").res.srcDirs("src/androidMain/res")
-            defaultConfig {
-                minSdk = 23
-                targetSdk = 31
-            }
-            compileOptions {
-                sourceCompatibility = JavaVersion.VERSION_11
-                targetCompatibility = JavaVersion.VERSION_11
-            }
-            composeOptions {
-                kotlinCompilerExtensionVersion = Versions.Android.Jetpack.compose
-            }
-            testOptions.unitTests {
-                isIncludeAndroidResources = true
+            // This allows to edit with autocompletion when IDE fails to work properly
+            with(this as LibraryExtension) {
+                kotlinOptions {
+                    jvmTarget = "11"
+                }
+                buildFeatures {
+                    compose = true
+                    // Disable unused AGP features
+                    aidl = false
+                    renderScript = false
+                    shaders = false
+                }
+                setCompileSdkVersion(31)
+                sourceSets.getByName("main").manifest.srcFile("src/androidMain/AndroidManifest.xml")
+                sourceSets.getByName("main").res.srcDirs("src/androidMain/res")
+                defaultConfig {
+                    minSdk = 23
+                    targetSdk = 31
+                }
+                compileOptions {
+                    sourceCompatibility = JavaVersion.VERSION_11
+                    targetCompatibility = JavaVersion.VERSION_11
+                }
+                composeOptions {
+                    kotlinCompilerExtensionVersion = Versions.Android.Jetpack.compose
+                }
+                testOptions.unitTests {
+                    isIncludeAndroidResources = true
+                }
             }
         }
     }

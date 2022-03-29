@@ -3,6 +3,7 @@
 package com.leandrodev.platforms
 
 import com.leandrodev.platforms.Configuration.*
+import org.jetbrains.kotlin.gradle.plugin.KotlinDependencyHandler
 import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet
 
 typealias Dependency = String
@@ -63,10 +64,26 @@ val androidPlatform: List<Dependency> = listOf(
 )
 
 object Data {
-    const val commonFirestore = "dev.gitlive:firebase-firestore:${Versions.Data.firestore}"
+//    const val commonFirestore = "dev.gitlive:firebase-firestore:${Versions.Data.gitLiveFirestore}"
+    private const val commonFirestore = "dev.gitlive:firebase-firestore"
+    fun KotlinDependencyHandler.implementCommonFirestore() {
+        implementation(commonFirestore) {
+            version {
+                branch = "master"
+            }
+        }
+    }
 }
 object Auth {
-    const val commonFirebaseAuth = "dev.gitlive:firebase-auth:${Versions.DataSource.gitLiveFirebaseAuth}"
+//    const val commonFirebaseAuth = "dev.gitlive:firebase-auth:${Versions.DataSource.gitLiveFirebaseAuth}"
+    private const val commonFirebaseAuth = "dev.gitlive:firebase-auth"
+    fun KotlinDependencyHandler.implementCommonFirebaseAuth() {
+        implementation(commonFirebaseAuth) {
+            version {
+                branch = "master"
+            }
+        }
+    }
 }
 
 fun KotlinSourceSet.applyDependencies(list: List<Dependency>) {

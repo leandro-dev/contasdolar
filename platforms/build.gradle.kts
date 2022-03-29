@@ -30,6 +30,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
     implementation("org.jetbrains.kotlin:kotlin-compiler-embeddable:$kotlinVersion")
     implementation("com.android.tools.build:gradle:7.1.2")
+    implementation("org.jetbrains.compose:compose-gradle-plugin:1.1.0")
 }
 
 gradlePlugin {

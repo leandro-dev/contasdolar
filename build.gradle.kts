@@ -22,9 +22,13 @@ allprojects {
         google()
         mavenCentral()
         mavenLocal()
+        maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
     }
 }
 
+/*
+// TODO Bind with existing task instead of creating a new one
 tasks.register("clean", Delete::class) {
     delete(rootProject.buildDir)
 }
+*/

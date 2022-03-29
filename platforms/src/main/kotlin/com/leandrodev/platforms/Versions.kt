@@ -14,7 +14,7 @@ object Versions {
         const val mockk = "1.12.3"
     }
     object Data {
-        const val firestore = "1.4.3"
+        const val gitLiveFirestore = "1.4.3"
     }
     object DependencyInjection {
         const val kodein = "7.10.0"
