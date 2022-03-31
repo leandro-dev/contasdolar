@@ -17,6 +17,11 @@ kotlin {
             dependencies {
                 implementation(compose.web.core)
                 implementation(compose.runtime)
+                implementation(project(":shared"))
+                implementation(project(":data"))
+                implementation(project(":ui"))
+                implementation(project(":auth"))
+                implementation(project(":bills"))
             }
         }
     }

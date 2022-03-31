@@ -7,7 +7,10 @@ import kotlinx.coroutines.flow.map
 import kotlin.jvm.JvmInline
 
 @JvmInline
-value class Collection(private val reference: CollectionReference) {
+value class Collection(
+    // This should be private, but JS compilation fails to work with it
+    val reference: CollectionReference,
+) {
     /**
      * Retrieve a flow from the desired collection that contains a set of values.
      *
@@ -17,8 +20,8 @@ value class Collection(private val reference: CollectionReference) {
         return getDataFlow<T>(::parseData)
     }
 
-    fun <T : Any> getDataFlow(
-        parser: (DocumentSnapshot) -> T
+    inline fun <reified T : Any> getDataFlow(
+        crossinline parser: (DocumentSnapshot) -> T
     ): Flow<Map<String, T>> {
         return reference.snapshots.map { snapshot: QuerySnapshot ->
             snapshot.documents.associate {
