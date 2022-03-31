@@ -8,7 +8,7 @@ pluginManagement {
 
     val kotlinVersion = "1.6.10"
     val agpVersion = "7.1.2"
-    val composeVersion = "1.1.0"
+    val composeVersion = "1.1.1"
     val googlePlayServicesVersion = "4.3.10"
     plugins {
         // This is necessary to avoid the plugins to be loaded multiple times in each subproject's classloader

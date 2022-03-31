@@ -22,6 +22,7 @@ kotlin {
                 implementation(project(":ui"))
                 implementation(project(":auth"))
                 implementation(project(":bills"))
+                implementation("org.jetbrains.compose.material:material-js:1.1.0-alpha1-dev559")
             }
         }
     }

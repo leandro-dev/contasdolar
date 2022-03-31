@@ -1,10 +1,13 @@
 import org.jetbrains.compose.web.dom.*
 import org.jetbrains.compose.web.renderComposable
+import androidx.compose.material.MaterialTheme
 
 fun main() {
     renderComposable(rootElementId = "root") {
-        H1 {
-            Text(value = "Hello JS world")
+        MaterialTheme {
+            H1 {
+                Text(value = "Hello JS world")
+            }
         }
     }
 }

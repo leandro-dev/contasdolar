@@ -12,7 +12,7 @@ repositories {
 
 val kotlinVersion = "1.6.10"
 val agpVersion = "7.1.2"
-val composeVersion = "1.1.0"
+val composeVersion = "1.1.1"
 dependencies {
     compileOnly(gradleKotlinDsl())
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")

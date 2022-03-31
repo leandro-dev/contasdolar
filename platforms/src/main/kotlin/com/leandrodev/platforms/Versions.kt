@@ -22,7 +22,7 @@ object Versions {
     object Android {
         object Jetpack {
             const val compose = "1.1.1"
-            const val composeJetbrains = "1.1.0"
+            const val composeJetbrains = "1.1.1"
             const val composeActivity = "1.4.0"
             const val composeNavigation = "2.4.1"
             const val composeConstraintLayout = "1.0.0"
