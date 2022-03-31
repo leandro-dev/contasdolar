@@ -7,15 +7,6 @@ plugins {
 group = "com.leandrodev.home.web"
 version = "1.0.0-alpha01"
 
-// Add maven repositories
-repositories {
-    gradlePluginPortal()
-    google()
-    mavenCentral()
-    mavenLocal()
-    maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
-}
-
 kotlin {
     js(IR) {
         browser()

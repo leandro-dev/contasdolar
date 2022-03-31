@@ -6,9 +6,9 @@ group = "com.leandrodev.shared"
 version = "1.0"
 
 kotlin {
-    cocoapods {
+    /*cocoapods {
         framework {
             baseName = "shared"
         }
-    }
+    }*/
 }

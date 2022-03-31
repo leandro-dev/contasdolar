@@ -1,4 +1,4 @@
-import com.leandrodev.platforms.Auth.implementCommonFirebaseAuth
+import com.leandrodev.platforms.Auth.commonFirebaseAuth
 
 plugins {
     id("com.leandrodev.mpplibrary")
@@ -11,7 +11,7 @@ kotlin {
             dependencies {
                 implementation(project(":shared"))
                 implementation(project(":ui"))
-                implementCommonFirebaseAuth()
+                implementation(commonFirebaseAuth)
             }
         }
     }

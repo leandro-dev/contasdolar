@@ -1,34 +1,22 @@
-buildscript {
-    val kotlinVersion = "1.6.10"
-
-repositories {
-        gradlePluginPortal()
-        google()
-    mavenCentral()
-        mavenLocal()
-    maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
-    }
-    dependencies {
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
-        classpath("org.jetbrains.kotlin:kotlin-serialization:$kotlinVersion")
-        classpath("com.android.tools.build:gradle:7.1.2")
-        classpath("com.google.gms:google-services:4.3.10")
-        classpath("org.jetbrains.compose:compose-gradle-plugin:1.1.0")
-    }
+plugins {
+    // this is necessary to avoid the plugins to be loaded multiple times
+    // in each subproject's classloader
+    kotlin("multiplatform").apply(false)
+    kotlin("android").apply(false)
+    id("com.android.application").apply(false)
+    id("com.android.library").apply(false)
+    id("com.google.gms.google-services").apply(false)
+    id("org.jetbrains.compose").apply(false)
+    id("org.jetbrains.kotlin.kapt").apply(false)
+    id("org.jetbrains.kotlin.js").apply(false)
+    id("org.jetbrains.kotlin.plugin.serialization").apply(false)
+    id("org.jetbrains.kotlin.native.cocoapods").apply(false)
 }
 
-allprojects {
+subprojects {
     repositories {
-    google()
+        google()
         mavenCentral()
-        mavenLocal()
         maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
     }
 }
-
-/*
-// TODO Bind with existing task instead of creating a new one
-tasks.register("clean", Delete::class) {
-    delete(rootProject.buildDir)
-    }
-*/

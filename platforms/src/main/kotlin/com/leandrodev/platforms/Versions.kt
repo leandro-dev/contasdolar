@@ -13,14 +13,11 @@ object Versions {
         const val androidxTestCore = "1.4.0"
         const val mockk = "1.12.3"
     }
-    object Data {
-        const val gitLiveFirestore = "1.4.3"
-    }
     object DependencyInjection {
         const val kodein = "7.10.0"
     }
     object DataSource {
-        const val gitLiveFirebaseAuth = "1.4.3"
+        const val gitLiveFirestore = "1.4.3"
     }
     object Android {
         object Jetpack {

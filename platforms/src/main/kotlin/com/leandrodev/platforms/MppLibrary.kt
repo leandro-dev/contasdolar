@@ -8,6 +8,7 @@ import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.plugins.ExtensionAware
+import org.jetbrains.compose.compose
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.plugin.cocoapods.CocoapodsExtension
 import org.jetbrains.kotlin.gradle.plugin.cocoapods.KotlinCocoapodsPlugin.Companion.COCOAPODS_EXTENSION_NAME
@@ -17,7 +18,7 @@ open class MppLibrary : Plugin<Project> {
     override fun apply(target: Project) {
         configureKotlinMultiplatform(target)
         configureAndroidLibrary(target)
-        configureIosCocoapods(target)
+//        configureIosCocoapods(target)
     }
 
     private fun configureKotlinMultiplatform(project: Project) {
@@ -27,8 +28,9 @@ open class MppLibrary : Plugin<Project> {
             // This allows to edit with autocompletion when IDE fails to work properly
             with(this as KotlinMultiplatformExtension) {
                 android()
-                /*js(IR) {
+/*                js(IR) {
                     browser()
+                    binaries.executable()
                 }*/
                 /*iosX64()
                 iosArm64()

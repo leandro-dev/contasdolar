@@ -1,4 +1,4 @@
-import com.leandrodev.platforms.Data.implementCommonFirestore
+import com.leandrodev.platforms.Data.commonFirestore
 
 plugins {
     id("com.leandrodev.mpplibrary")
@@ -9,7 +9,7 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementCommonFirestore()
+                implementation(commonFirestore)
             }
         }
     }

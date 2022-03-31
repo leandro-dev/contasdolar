@@ -64,26 +64,10 @@ val androidPlatform: List<Dependency> = listOf(
 )
 
 object Data {
-//    const val commonFirestore = "dev.gitlive:firebase-firestore:${Versions.Data.gitLiveFirestore}"
-    private const val commonFirestore = "dev.gitlive:firebase-firestore"
-    fun KotlinDependencyHandler.implementCommonFirestore() {
-        implementation(commonFirestore) {
-            version {
-                branch = "master"
-            }
-        }
-    }
+    const val commonFirestore = "dev.gitlive:firebase-firestore:${Versions.DataSource.gitLiveFirestore}"
 }
 object Auth {
-//    const val commonFirebaseAuth = "dev.gitlive:firebase-auth:${Versions.DataSource.gitLiveFirebaseAuth}"
-    private const val commonFirebaseAuth = "dev.gitlive:firebase-auth"
-    fun KotlinDependencyHandler.implementCommonFirebaseAuth() {
-        implementation(commonFirebaseAuth) {
-            version {
-                branch = "master"
-            }
-        }
-    }
+    const val commonFirebaseAuth = "dev.gitlive:firebase-auth:${Versions.DataSource.gitLiveFirestore}"
 }
 
 fun KotlinSourceSet.applyDependencies(list: List<Dependency>) {

@@ -18,9 +18,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":shared"))
-    implementation(project(":data"))
-    implementation(project(":bills"))
     implementation(project(":ui"))
+    implementation(project(":bills"))
     implementation(project(":auth"))
 }
