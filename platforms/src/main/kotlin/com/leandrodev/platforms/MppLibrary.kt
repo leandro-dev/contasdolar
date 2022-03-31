@@ -28,10 +28,10 @@ open class MppLibrary : Plugin<Project> {
             // This allows to edit with autocompletion when IDE fails to work properly
             with(this as KotlinMultiplatformExtension) {
                 android()
-/*                js(IR) {
+                js(IR) {
                     browser()
                     binaries.executable()
-                }*/
+                }
                 /*iosX64()
                 iosArm64()
                 iosSimulatorArm64() // Make sure all ios dependencies support this target*/
@@ -48,12 +48,12 @@ open class MppLibrary : Plugin<Project> {
                     maybeCreate("androidTest").apply {
                         applyDependencies(androidTestDependencies)
                     }
-                    /*maybeCreate("jsMain").apply {
+                    maybeCreate("jsMain").apply {
                         dependencies {
                             implementation(compose.web.core)
                             implementation(compose.runtime)
                         }
-                    }*/
+                    }
                     /*val iosX64Main = maybeCreate("iosX64Main")
                     val iosArm64Main = maybeCreate("iosArm64Main")
                     val iosSimulatorArm64Main = maybeCreate("iosSimulatorArm64Main")
