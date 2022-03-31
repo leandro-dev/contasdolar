@@ -17,7 +17,7 @@ object Versions {
         const val kodein = "7.10.0"
     }
     object DataSource {
-        const val gitLiveFirestore = "1.4.3"
+        const val gitLiveFirestore = "1.4.4-snapshot"
     }
     object Android {
         object Jetpack {

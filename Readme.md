@@ -7,6 +7,15 @@ Some details of this project will be shown here once the screens get implemented
 
 Other steps like irrigation automation will be developed in the future.
 
+## Instructions to build
+Due to some issues with experimental features, in order to compile this project you must first publish a dependency on mavenLocal()
+- Clone this repository on branch js-ir (default): https://github.com/leandro-dev/firebase-kotlin-sdk
+- run gradle task `publishMavenLocal()`
+
+This is due to the fact that we need this library with `js(IR)` that is not available on release 1.4.3 (lastest at the time being).
+And also due to another issue with kotlin-js + source dependency provided by gradle.
+Check file `settings.gradle.kts` for further details.
+
 ## For developers
 
 This project is designed to be multiplatform with kotlin.
