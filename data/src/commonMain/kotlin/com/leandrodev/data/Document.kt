@@ -1,7 +1,5 @@
 package com.leandrodev.data
 
-interface Database {
+expect class Document {
     fun getCollection(path: String): Collection
 }
-
-expect class DatabaseImpl() : Database

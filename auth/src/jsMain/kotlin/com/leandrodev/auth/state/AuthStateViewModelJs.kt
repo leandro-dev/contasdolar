@@ -3,22 +3,18 @@ package com.leandrodev.auth.state
 import com.leandrodev.auth.model.User
 import com.leandrodev.shared.MutableViewState
 import com.leandrodev.shared.createViewAction
-import com.leandrodev.auth.utils.toUser
 import com.leandrodev.shared.scope
-import dev.gitlive.firebase.Firebase
-import dev.gitlive.firebase.auth.auth
-import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-internal class AuthStateViewModelImpl : AuthStateViewModel() {
+internal class AuthStateViewModelJs : AuthStateViewModel() {
     override val state: MutableViewState<AuthState> = createViewAction()
 
     init {
         scope.launch {
-            Firebase.auth.authStateChanged.collectLatest {
-                val user = Firebase.auth.currentUser?.toUser()
-                state.emit(getStateFromUser(user))
-            }
+            delay(500)
+            state.emit(AuthState.Authenticated(User()))
+            //TODO Make an implementation that works on JS, abstracting firebase strategy from this ViewModel.
         }
     }
 

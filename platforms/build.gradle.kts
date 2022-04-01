@@ -1,16 +1,3 @@
-buildscript {
-    repositories {
-        google()
-        mavenCentral()
-        mavenCentral()
-        maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
-    }
-    dependencies {
-        classpath("com.android.tools.build:gradle:7.1.2")
-        classpath("org.jetbrains.compose:compose-gradle-plugin:1.1.0")
-    }
-}
-
 plugins {
     java
     `kotlin-dsl`
@@ -21,15 +8,17 @@ repositories {
     google()
     gradlePluginPortal()
     mavenCentral()
-    maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
 }
 
 val kotlinVersion = "1.6.10"
+val agpVersion = "7.1.2"
+val composeVersion = "1.1.1"
 dependencies {
     compileOnly(gradleKotlinDsl())
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
     implementation("org.jetbrains.kotlin:kotlin-compiler-embeddable:$kotlinVersion")
-    implementation("com.android.tools.build:gradle:7.1.2")
+    implementation("com.android.tools.build:gradle:$agpVersion")
+    implementation("org.jetbrains.compose:compose-gradle-plugin:$composeVersion")
 }
 
 gradlePlugin {
