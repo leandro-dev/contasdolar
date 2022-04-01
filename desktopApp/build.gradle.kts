@@ -19,7 +19,7 @@ kotlin {
 
                 // Specific dependency
                 implementation(compose.desktop.currentOs)
-//                implementation(project(":shared"))
+                implementation(project(":shared"))
 //                implementation(project(":data"))
 //                implementation(project(":ui"))
 //                implementation(project(":auth"))
