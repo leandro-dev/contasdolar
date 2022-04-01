@@ -1,11 +1,25 @@
-# Home / Contas do Lar
+# Leandro's Home
 
-This app is designed to help me on my home automation.
+This app is designed to help me on my home automation and daily tasks.
 
 The first step is to help me controlling my expenses and bills.
-Some details of this project will be shown here once the screens get implemented.
+The next step is to setup an integration with Raspberry Pi to water my plants and control/monitor through this app.
 
-Other steps like irrigation automation will be developed in the future.
+I also want to use this project to test some new technologies and to be my showcase.
+
+## Quick Overview
+![Icon (1)](https://user-images.githubusercontent.com/1706622/128160651-e2377574-d79b-4a99-90e7-f8b5b9b97304.png)
+
+I would like to apologize for my terrible design skills, but I hope you got the references from the icon :)
+
+It is being build with multiple modules, following the structure:
+![image](https://user-images.githubusercontent.com/1706622/161262299-0a5bb871-a466-4014-830f-f38d3354ce6d.png)
+
+Currently the app has only 2 screens, to work as a demo while I setup the multiplatform environment. 
+|SignIn|WalletList|
+|-------|-------|
+|![image](https://user-images.githubusercontent.com/1706622/161261001-c5c9663e-52d5-476a-8827-4fc2fba5384d.png)|![image](https://user-images.githubusercontent.com/1706622/161261050-e9193c95-78c9-41bc-b36d-62743798a8f5.png)|
+
 
 ## For developers
 
@@ -32,7 +46,7 @@ App Layers:
 - I really wanted to make this project to compile for iOS as well, but there is a big problem: I don't own a Mac.
 - I've attempted to use Bitrise in order to generate iOS builds, but it failed, was too complicated to investigate/solve.
 - This is still on backlog, if I can manage to have access to a Mac in order to fix the build I will work on this. Any external help is always welcome.
-- My next attempt will be using the plugin "Code with me" and asking a friends help. This is on backlog already.
+- My next attempt will be using the plugin "Code with me" and asking a friends help.
 
 
 ### IDE issues
