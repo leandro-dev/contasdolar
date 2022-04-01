@@ -5,4 +5,4 @@ interface Database {
 }
 
 // TODO Migrate to dependency-injection with kodein
-expect object DatabaseImpl : Database
+expect class DatabaseImpl() : Database

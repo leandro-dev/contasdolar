@@ -3,7 +3,6 @@
 package com.leandrodev.platforms
 
 import com.android.build.gradle.LibraryExtension
-import com.leandrodev.platforms.AndroidModule.kotlinOptions
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -75,15 +74,6 @@ open class MppLibrary : Plugin<Project> {
                 }
             }
         }
-
-/*        // A temporary workaround for a bug in jsRun invocation - see https://youtrack.jetbrains.com/issue/KT-48273
-        project.afterEvaluate {
-            rootProject.extensions.configure<NodeJsRootExtension> {
-                versions.webpackDevServer.version = "4.0.0"
-                versions.webpackCli.version = "4.9.0"
-            }
-        }*/
-
     }
 
     private fun configureAndroidLibrary(project: Project) {

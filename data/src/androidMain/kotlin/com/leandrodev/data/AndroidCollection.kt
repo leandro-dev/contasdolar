@@ -9,11 +9,6 @@ import kotlinx.coroutines.flow.map
 actual class Collection(
     private val reference: CollectionReference,
 ) {
-    /**
-     * Retrieve a flow from the desired collection that contains a set of values.
-     *
-     * @return a map where the key is the ID of the element, and the data as value.
-     */
     actual inline fun <reified T : Any> getDataFlow(): Flow<Map<String, T>> {
         return getDataFlowInternal<T>(::parseData)
     }
