@@ -34,6 +34,7 @@ includeBuild("platforms")
 // Applications
 include(":androidApp")
 include(":webApp")
+include(":desktopApp")
 
 // Core modules
 include(":shared")
