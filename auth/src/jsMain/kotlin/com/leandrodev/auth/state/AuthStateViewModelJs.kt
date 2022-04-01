@@ -14,10 +14,7 @@ internal class AuthStateViewModelJs : AuthStateViewModel() {
         scope.launch {
             delay(500)
             state.emit(AuthState.Authenticated(User()))
-            /*Firebase.auth.authStateChanged.collectLatest {
-                val user = Firebase.auth.currentUser?.toUser()
-                state.emit(getStateFromUser(user))
-            }*/
+            //TODO Make an implementation that works on JS, abstracting firebase strategy from this ViewModel.
         }
     }
 

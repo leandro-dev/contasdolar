@@ -10,7 +10,7 @@ import dev.gitlive.firebase.auth.auth
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
-internal class AuthStateViewModelImpl : AuthStateViewModel() {
+internal class AuthStateViewModelAndroid : AuthStateViewModel() {
     override val state: MutableViewState<AuthState> = createViewAction()
 
     init {

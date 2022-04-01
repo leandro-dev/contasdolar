@@ -7,7 +7,7 @@ version = "1.0"
 
 kotlin {
     sourceSets {
-        val commonMain by getting {
+        val androidMain by getting {
             dependencies {
                 implementation(commonFirestore)
             }

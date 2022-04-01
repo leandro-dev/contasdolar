@@ -11,6 +11,10 @@ kotlin {
             dependencies {
                 implementation(project(":shared"))
                 implementation(project(":ui"))
+            }
+        }
+        val androidMain by getting {
+            dependencies {
                 implementation(commonFirebaseAuth)
             }
         }

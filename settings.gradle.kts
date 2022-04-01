@@ -27,24 +27,6 @@ pluginManagement {
     }
 }
 
-/*
- * Project dev.gitlive version 1.4.3 does not yet contain the js(IR) required to work with compose.
- * A workaround would be to use source dependency provided by gradle:
- * https://blog.gradle.org/introducing-source-dependencies?_ga=2.151496127.728811781.1648544498-987300890.1631798008
- *
- * But this is not compatible with JS builds. It works ok when JS is not configured.
- * Please, check these issues:
- * https://youtrack.jetbrains.com/issue/KT-50064
- * https://youtrack.jetbrains.com/issue/KT-47351
- */
-/*
-sourceControl {
-    gitRepository(URI.create("https://github.com/leandro-dev/firebase-kotlin-sdk.git")) {
-        producesModule("dev.gitlive:firebase-app")
-        and so on for all other libs from dev.gitlive...
-    }
-}*/
-
 rootProject.name = "home"
 
 includeBuild("platforms")
