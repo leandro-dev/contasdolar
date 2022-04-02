@@ -14,6 +14,7 @@ pluginManagement {
         // This is necessary to avoid the plugins to be loaded multiple times in each subproject's classloader
         kotlin("multiplatform").version(kotlinVersion)
         kotlin("android").version(kotlinVersion)
+        kotlin("jvm").version(kotlinVersion)
 
         id("com.android.application").version(agpVersion)
         id("com.android.library").version(agpVersion)
@@ -34,6 +35,7 @@ includeBuild("platforms")
 // Applications
 include(":androidApp")
 include(":webApp")
+include(":desktopApp")
 
 // Core modules
 include(":shared")

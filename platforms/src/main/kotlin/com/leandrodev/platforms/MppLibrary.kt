@@ -31,6 +31,7 @@ open class MppLibrary : Plugin<Project> {
                     browser()
                     binaries.executable()
                 }
+                jvm("desktop")
                 /*iosX64()
                 iosArm64()
                 iosSimulatorArm64() // Make sure all ios dependencies support this target*/
@@ -51,6 +52,12 @@ open class MppLibrary : Plugin<Project> {
                         dependencies {
                             implementation(compose.web.core)
                             implementation(compose.runtime)
+                        }
+                    }
+                    named("desktopMain") {
+                        kotlin.srcDirs("src/desktopMain/kotlin")
+                        dependencies {
+                            implementation(compose.desktop.common)
                         }
                     }
                     /*val iosX64Main = maybeCreate("iosX64Main")
