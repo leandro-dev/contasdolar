@@ -7,6 +7,7 @@ import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.plugins.ExtensionAware
+import org.jetbrains.compose.ComposePlugin
 import org.jetbrains.compose.compose
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.plugin.cocoapods.CocoapodsExtension
@@ -48,6 +49,7 @@ open class MppLibrary : Plugin<Project> {
                     maybeCreate("androidTest").apply {
                         applyDependencies(androidTestDependencies)
                     }
+                    val compose = ComposePlugin.Dependencies(project)
                     maybeCreate("jsMain").apply {
                         dependencies {
                             implementation(compose.web.core)
@@ -90,7 +92,7 @@ open class MppLibrary : Plugin<Project> {
             // This allows to edit with autocompletion when IDE fails to work properly
             with(this as LibraryExtension) {
                 kotlinOptions {
-                    jvmTarget = "11"
+                    jvmTarget = "17"
                 }
                 buildFeatures {
                     compose = true
@@ -99,7 +101,7 @@ open class MppLibrary : Plugin<Project> {
                     renderScript = false
                     shaders = false
                 }
-                setCompileSdkVersion(31)
+                setCompileSdkVersion(33)
                 sourceSets.getByName("main").manifest.srcFile("src/androidMain/AndroidManifest.xml")
                 sourceSets.getByName("main").res.srcDirs("src/androidMain/res")
                 defaultConfig {
@@ -108,10 +110,10 @@ open class MppLibrary : Plugin<Project> {
                 }
                 compileOptions {
                     sourceCompatibility = JavaVersion.VERSION_11
-                    targetCompatibility = JavaVersion.VERSION_11
+                    targetCompatibility = JavaVersion.VERSION_17
                 }
                 composeOptions {
-                    kotlinCompilerExtensionVersion = Versions.Android.Jetpack.compose
+                    kotlinCompilerExtensionVersion = Versions.Android.Jetpack.composeCompatibility
                 }
                 testOptions.unitTests {
                     isIncludeAndroidResources = true

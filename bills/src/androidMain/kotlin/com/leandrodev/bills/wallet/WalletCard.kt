@@ -18,7 +18,7 @@ import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import coil.compose.AsyncImage
-import com.leandrodev.bills.R
+import com.leandrodev.ui.R as UiR
 import com.leandrodev.bills.wallet.model.Wallet
 import com.leandrodev.ui.theme.HomeTheme
 import com.leandrodev.ui.MoneyText
@@ -48,7 +48,7 @@ fun WalletCard(
                         height = Dimension.wrapContent
                     },
                 model = wallet.imageUrl,
-                placeholder = painterResource(id = R.drawable.money_bag),
+                placeholder = painterResource(id = UiR.drawable.money_bag),
                 contentDescription = null,
             )
             Text(

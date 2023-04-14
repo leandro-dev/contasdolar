@@ -20,3 +20,7 @@ kotlin {
         }
     }
 }
+
+android {
+    namespace = "com.leandrodev.auth"
+}

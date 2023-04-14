@@ -14,3 +14,7 @@ kotlin {
         }
     }
 }
+
+android {
+    namespace = "com.leandrodev.data"
+}

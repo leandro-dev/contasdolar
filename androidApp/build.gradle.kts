@@ -4,6 +4,7 @@ plugins {
 }
 
 android {
+    namespace = "com.leandrodev.contasdolar.android"
     defaultConfig {
         applicationId = "com.leandrodev.contasdolar.android"
     }
@@ -13,7 +14,7 @@ android {
         }
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"
     }
 }
 

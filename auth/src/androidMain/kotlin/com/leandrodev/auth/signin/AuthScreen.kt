@@ -15,6 +15,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.leandrodev.auth.R
+import com.leandrodev.ui.R as UiR
 import com.leandrodev.auth.model.User
 import com.leandrodev.shared.get
 import com.leandrodev.shared.getViewModel
@@ -53,7 +54,7 @@ internal fun AuthScreen(
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Image(
-                painter = painterResource(id = R.drawable.money_bag),
+                painter = painterResource(id = UiR.drawable.money_bag),
                 contentDescription = stringResource(id = R.string.ic_launcher_description),
             )
             Text(

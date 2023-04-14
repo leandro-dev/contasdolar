@@ -15,3 +15,7 @@ kotlin {
         }
     }
 }
+
+android {
+    namespace = "com.leandrodev.bills"
+}

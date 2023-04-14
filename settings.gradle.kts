@@ -6,10 +6,10 @@ pluginManagement {
         maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
     }
 
-    val kotlinVersion = "1.6.10"
-    val agpVersion = "7.1.2"
-    val composeVersion = "1.1.1"
-    val googlePlayServicesVersion = "4.3.10"
+    val kotlinVersion = "1.8.20"
+    val agpVersion = "8.0.0"
+    val composeVersion = "1.4.0"
+    val googlePlayServicesVersion = "4.3.15"
     plugins {
         // This is necessary to avoid the plugins to be loaded multiple times in each subproject's classloader
         kotlin("multiplatform").version(kotlinVersion)

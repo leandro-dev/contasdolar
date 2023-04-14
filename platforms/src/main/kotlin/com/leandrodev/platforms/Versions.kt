@@ -2,7 +2,7 @@ package com.leandrodev.platforms
 
 object Versions {
     object Kotlin {
-        const val sdk = "1.6.10"
+        const val sdk = "1.8.20"
         const val coroutines = "1.6.0"
         const val serialization = "1.3.2"
     }
@@ -21,8 +21,8 @@ object Versions {
     }
     object Android {
         object Jetpack {
-            const val compose = "1.1.1"
-            const val composeJetbrains = "1.1.1"
+            const val compose = "1.4.1"
+            const val composeCompatibility = "1.4.5"
             const val composeActivity = "1.4.0"
             const val composeNavigation = "2.4.1"
             const val composeConstraintLayout = "1.0.0"

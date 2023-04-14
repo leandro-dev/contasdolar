@@ -22,7 +22,7 @@ open class AndroidApplication : Plugin<Project> {
             applyDependencies("testImplementation", kotlinCommonTestDependencies)
         }
         project.extensions.configure(BaseAppModuleExtension::class.java) {
-            setCompileSdkVersion(31)
+            setCompileSdkVersion(33)
             defaultConfig {
                 minSdk = 23
                 targetSdk = 31
@@ -39,10 +39,10 @@ open class AndroidApplication : Plugin<Project> {
             }
             compileOptions {
                 sourceCompatibility = JavaVersion.VERSION_11
-                targetCompatibility = JavaVersion.VERSION_11
+                targetCompatibility = JavaVersion.VERSION_17
             }
             composeOptions {
-                kotlinCompilerExtensionVersion = Versions.Android.Jetpack.compose
+                kotlinCompilerExtensionVersion = Versions.Android.Jetpack.composeCompatibility
             }
             testOptions.unitTests {
                 isIncludeAndroidResources = true
